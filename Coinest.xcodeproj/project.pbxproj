@@ -18,6 +18,9 @@
 		44E0B3712879F0A400A991A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */; };
 		44E0B3792879F40C00A991A7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B3782879F40C00A991A7 /* Color.swift */; };
 		44E0B37D2879F45600A991A7 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B37C2879F45600A991A7 /* ColorTheme.swift */; };
+		44FC9EE528DDF9F200AAACE0 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC9EE428DDF9F200AAACE0 /* Coin.swift */; };
+		44FC9EE728DE026300AAACE0 /* Preview Documentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC9EE628DE026200AAACE0 /* Preview Documentation.swift */; };
+		44FC9EE928DE0AAB00AAACE0 /* OptionalDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC9EE828DE0AAB00AAACE0 /* OptionalDouble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44E0B3782879F40C00A991A7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		44E0B37C2879F45600A991A7 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		44FC9EE428DDF9F200AAACE0 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		44FC9EE628DE026200AAACE0 /* Preview Documentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview Documentation.swift"; sourceTree = "<group>"; };
+		44FC9EE828DE0AAB00AAACE0 /* OptionalDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalDouble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 				44E0B36D2879F0A400A991A7 /* Assets.xcassets */,
 				449F601928DCE97D007FDEA5 /* Core */,
 				44E0B3772879F3FC00A991A7 /* Extensions */,
+				44FC9EE328DDF9D000AAACE0 /* Models */,
 				44E0B36F2879F0A400A991A7 /* Preview Content */,
 				44E0B37A2879F43F00A991A7 /* Utilites */,
 			);
@@ -129,6 +136,7 @@
 		44E0B36F2879F0A400A991A7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				44FC9EE628DE026200AAACE0 /* Preview Documentation.swift */,
 				44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				44E0B3782879F40C00A991A7 /* Color.swift */,
+				44FC9EE828DE0AAB00AAACE0 /* OptionalDouble.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +167,14 @@
 				449F602728DCEA13007FDEA5 /* TitleNaming.swift */,
 			);
 			path = CommonStructs;
+			sourceTree = "<group>";
+		};
+		44FC9EE328DDF9D000AAACE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44FC9EE428DDF9F200AAACE0 /* Coin.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,12 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FC9EE528DDF9F200AAACE0 /* Coin.swift in Sources */,
 				449F602828DCEA13007FDEA5 /* TitleNaming.swift in Sources */,
 				44E0B36C2879F0A000A991A7 /* ContentView.swift in Sources */,
+				44FC9EE928DE0AAB00AAACE0 /* OptionalDouble.swift in Sources */,
 				449F602428DCE9D7007FDEA5 /* HomeView.swift in Sources */,
 				44E0B37D2879F45600A991A7 /* ColorTheme.swift in Sources */,
 				44E0B36A2879F0A000A991A7 /* CoinestApp.swift in Sources */,
 				449F601E28DCE9AD007FDEA5 /* CircleButtonView.swift in Sources */,
+				44FC9EE728DE026300AAACE0 /* Preview Documentation.swift in Sources */,
 				44E0B3792879F40C00A991A7 /* Color.swift in Sources */,
 				449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */,
 				449F602028DCE9C0007FDEA5 /* CircleButtonAnimationView.swift in Sources */,
