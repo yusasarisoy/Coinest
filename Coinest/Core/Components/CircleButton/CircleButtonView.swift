@@ -31,7 +31,6 @@ struct CircleButtonView_Previews: PreviewProvider {
   static var previews: some View {
     Group {
       CircleButtonView(iconName: IconNaming.shared.info)
-
       CircleButtonView(iconName: IconNaming.shared.plus)
         .preferredColorScheme(.dark)
     }

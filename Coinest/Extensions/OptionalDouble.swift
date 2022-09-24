@@ -13,4 +13,8 @@ extension Optional where Wrapped == Double {
   var toInt: Int {
     Int(self.orZero)
   }
+
+  var toString: String {
+    "\(self.orZero)"
+  }
 }
