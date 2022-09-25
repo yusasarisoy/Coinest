@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
   // MARK: - Properties
+  @EnvironmentObject private var homeViewModel: HomeViewModel
   @State private var showPortfolio = false
 
   // MARK: - View
@@ -18,6 +19,14 @@ struct HomeView: View {
         .ignoresSafeArea()
       VStack {
         homeHeader
+        columnTitles
+        if showPortfolio {
+          portfolioListing
+            .transition(.move(edge: .trailing))
+        } else {
+          cryptocurrenciesListing
+            .transition(.move(edge: .leading))
+        }
         Spacer()
       }
     }
@@ -48,6 +57,44 @@ extension HomeView {
     }
     .padding(.horizontal)
   }
+
+  private var columnTitles: some View {
+    HStack(spacing: .zero) {
+      Text("Coin")
+        .padding(.leading, 25)
+      Spacer()
+      if showPortfolio {
+        Text("Holdings")
+      }
+      Text("Price")
+        .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
+    }
+    .font(.caption)
+    .foregroundColor(Color.theme.secondaryText)
+    .padding(.horizontal)
+  }
+
+  private var portfolioListing: some View {
+    List {
+      ForEach(homeViewModel.allCoins) { coin in
+        CoinRowView(coin: coin, showHoldings: true)
+          .listRowSeparator(.hidden)
+          .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+      }
+    }
+    .listStyle(.plain)
+  }
+
+  private var cryptocurrenciesListing: some View {
+    List {
+      ForEach(homeViewModel.allCoins) { coin in
+        CoinRowView(coin: coin, showHoldings: false)
+          .listRowSeparator(.hidden)
+          .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+      }
+    }
+    .listStyle(.plain)
+  }
 }
 
 // MARK: - Preview
@@ -57,5 +104,6 @@ struct HomeView_Previews: PreviewProvider {
       HomeView()
         .navigationBarHidden(true)
     }
+    .environmentObject(developer.homeViewModel)
   }
 }

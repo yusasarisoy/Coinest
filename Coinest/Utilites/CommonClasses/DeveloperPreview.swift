@@ -6,8 +6,11 @@
 //
 
 final class DeveloperPreview {
-  // MARK: - Properties
+  // MARK: - Singleton Instance
   static let instance = DeveloperPreview()
+
+  // MARK: - Properties
+  let homeViewModel = HomeViewModel()
 
   // MARK: - Coin Instance
   let coin: Coin = .init(
