@@ -34,10 +34,7 @@ extension CoinRowView {
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
-      Image(ImageNaming.shared.bitcoin)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .clipShape(Circle())
+      Circle()
         .frame(width: 30, height: 30)
       Text(coin.symbol.orEmpty.uppercased())
         .font(.headline)
@@ -70,11 +67,8 @@ extension CoinRowView {
 // MARK: - Preview
 struct CoinRowView_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      CoinRowView(coin: developer.coin, showHoldings: true)
-      CoinRowView(coin: developer.coin, showHoldings: true)
-        .preferredColorScheme(.dark)
-    }
-    .previewLayout(.sizeThatFits)
+    CoinRowView(coin: developer.coin, showHoldings: true)
+      .previewLayout(.sizeThatFits)
+      .preferredColorScheme(.dark)
   }
 }

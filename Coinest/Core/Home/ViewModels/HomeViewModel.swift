@@ -5,26 +5,31 @@
 //  Created by Yuşa on 25.09.2022.
 //
 
+import Combine
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
   // MARK: - Properties
-  @Published var allCoins: [Coin] = []
+  @Published var coins: [Coin] = []
   @Published var portfolioCoins: [Coin] = []
+
+  private let dataService = CoinDataService()
+  private var cancellables = Set<AnyCancellable>()
 
   // MARK: - Initialization
   init() {
-    showCryptocurrenciesAndPortfolio()
+    fetchCoins()
   }
 }
 
 // MARK: - Private Helper Methods
 private extension HomeViewModel {
-  func showCryptocurrenciesAndPortfolio() {
-    Task {
-      try await Task.sleep(withSeconds: 2)
-      allCoins.append(DeveloperPreview.instance.coin)
-      portfolioCoins.append(DeveloperPreview.instance.coin)
-    }
+  func fetchCoins() {
+    dataService.$coins
+      .sink { [weak self] coins in
+        guard let self = self else { return }
+        self.coins = coins
+      }
+      .store(in: &cancellables)
   }
 }

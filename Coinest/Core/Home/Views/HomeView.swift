@@ -76,7 +76,7 @@ extension HomeView {
 
   private var portfolioListing: some View {
     List {
-      ForEach(homeViewModel.allCoins) { coin in
+      ForEach(homeViewModel.coins) { coin in
         CoinRowView(coin: coin, showHoldings: true)
           .listRowSeparator(.hidden)
           .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
@@ -87,7 +87,7 @@ extension HomeView {
 
   private var cryptocurrenciesListing: some View {
     List {
-      ForEach(homeViewModel.allCoins) { coin in
+      ForEach(homeViewModel.coins) { coin in
         CoinRowView(coin: coin, showHoldings: false)
           .listRowSeparator(.hidden)
           .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
@@ -103,6 +103,7 @@ struct HomeView_Previews: PreviewProvider {
     NavigationView {
       HomeView()
         .navigationBarHidden(true)
+        .preferredColorScheme(.dark)
     }
     .environmentObject(developer.homeViewModel)
   }
