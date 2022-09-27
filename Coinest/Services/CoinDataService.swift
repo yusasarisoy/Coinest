@@ -24,19 +24,9 @@ private extension CoinDataService {
   func fetchCoins() {
     guard let url = URL(string: APIConstants.url) else { return }
 
-    coinSubscription = URLSession.shared.dataTaskPublisher(for: url)
-      .subscribe(on: DispatchQueue.global(qos: .background))
-      .tryMap { output -> Data in
-        guard let response = output.response as? HTTPURLResponse,
-              response.statusCode == 200 else {
-          throw URLError(.badServerResponse)
-        }
-
-        return output.data
-      }
-      .receive(on: DispatchQueue.main)
+    coinSubscription = NetworkManager.download(url: url)
       .decode(type: [Coin].self, decoder: JSONDecoder())
-      .sink(receiveCompletion: { _ in },
+      .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] coins in
         guard let self = self else { return }
         self.coins = coins
