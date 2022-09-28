@@ -27,14 +27,14 @@ struct CoinRowView: View {
 }
 
 // MARK: - Column Views
-extension CoinRowView {
-  private var leftColumn: some View {
+private extension CoinRowView {
+  var leftColumn: some View {
     HStack(spacing: .zero) {
       Text(coin.rank.toString)
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
-      Circle()
+      CoinImageView(coin: coin)
         .frame(width: 30, height: 30)
       Text(coin.symbol.orEmpty.uppercased())
         .font(.headline)
@@ -43,7 +43,7 @@ extension CoinRowView {
     }
   }
 
-  private var centerColumn: some View {
+  var centerColumn: some View {
     VStack(alignment: .trailing) {
       Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
         .bold()
@@ -52,7 +52,7 @@ extension CoinRowView {
     .foregroundColor(Color.theme.accent)
   }
 
-  private var rightColumn: some View {
+  var rightColumn: some View {
     VStack(alignment: .trailing) {
       Text((coin.currentPrice?.asCurrencyWith6Decimals()).orEmptyPrice)
         .bold()

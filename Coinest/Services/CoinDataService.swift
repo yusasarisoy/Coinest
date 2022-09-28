@@ -11,7 +11,8 @@ import Foundation
 final class CoinDataService {
   // MARK: - Properties
   @Published var coins: [Coin] = []
-  var coinSubscription: AnyCancellable?
+
+  private var coinSubscription: AnyCancellable?
 
   // MARK: - Initialization
   init() {

@@ -34,8 +34,8 @@ struct HomeView: View {
 }
 
 // MARK: - Home Header View
-extension HomeView {
-  private var homeHeader: some View {
+private extension HomeView {
+  var homeHeader: some View {
     HStack {
       CircleButtonView(iconName: showPortfolio ? IconNaming.shared.plus : IconNaming.shared.info)
         .background(
@@ -58,7 +58,7 @@ extension HomeView {
     .padding(.horizontal)
   }
 
-  private var columnTitles: some View {
+  var columnTitles: some View {
     HStack(spacing: .zero) {
       Text("Coin")
         .padding(.leading, 25)
@@ -74,7 +74,7 @@ extension HomeView {
     .padding(.horizontal)
   }
 
-  private var portfolioListing: some View {
+  var portfolioListing: some View {
     List {
       ForEach(homeViewModel.coins) { coin in
         CoinRowView(coin: coin, showHoldings: true)
@@ -85,7 +85,7 @@ extension HomeView {
     .listStyle(.plain)
   }
 
-  private var cryptocurrenciesListing: some View {
+  var cryptocurrenciesListing: some View {
     List {
       ForEach(homeViewModel.coins) { coin in
         CoinRowView(coin: coin, showHoldings: false)

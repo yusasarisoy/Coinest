@@ -11,4 +11,5 @@ struct IconNaming {
   let plus = "plus"
   let info = "info"
   let chevronRight = "chevron.right"
+  let questionMark = "questionmark"
 }
