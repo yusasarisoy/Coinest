@@ -25,6 +25,7 @@
 		449F602428DCE9D7007FDEA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602328DCE9D7007FDEA5 /* HomeView.swift */; };
 		449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602528DCEA06007FDEA5 /* IconNaming.swift */; };
 		449F602828DCEA13007FDEA5 /* TitleNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602728DCEA13007FDEA5 /* TitleNaming.swift */; };
+		44C37EF228E638B200049E15 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C37EF128E638B200049E15 /* LocalFileManager.swift */; };
 		44CF1D6D28E03D9300BDB90A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF1D6C28E03D9300BDB90A /* HomeViewModel.swift */; };
 		44E0B36A2879F0A000A991A7 /* CoinestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B3692879F0A000A991A7 /* CoinestApp.swift */; };
 		44E0B36C2879F0A000A991A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B36B2879F0A000A991A7 /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 		449F602328DCE9D7007FDEA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		449F602528DCEA06007FDEA5 /* IconNaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNaming.swift; sourceTree = "<group>"; };
 		449F602728DCEA13007FDEA5 /* TitleNaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNaming.swift; sourceTree = "<group>"; };
+		44C37EF128E638B200049E15 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		44CF1D6C28E03D9300BDB90A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		44E0B3662879F0A000A991A7 /* Coinest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E0B3692879F0A000A991A7 /* CoinestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinestApp.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4466BA9328E308E4007FC650 /* NetworkManager.swift */,
+				44C37EF128E638B200049E15 /* LocalFileManager.swift */,
 			);
 			path = CommonManagers;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				44E0B36A2879F0A000A991A7 /* CoinestApp.swift in Sources */,
 				449F601E28DCE9AD007FDEA5 /* CircleButtonView.swift in Sources */,
 				44FC9EE728DE026300AAACE0 /* Preview Documentation.swift in Sources */,
+				44C37EF228E638B200049E15 /* LocalFileManager.swift in Sources */,
 				44E0B3792879F40C00A991A7 /* Color.swift in Sources */,
 				449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */,
 				449F602028DCE9C0007FDEA5 /* CircleButtonAnimationView.swift in Sources */,
