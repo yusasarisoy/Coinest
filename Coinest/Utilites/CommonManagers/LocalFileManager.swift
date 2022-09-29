@@ -2,7 +2,7 @@
 //  LocalFileManager.swift
 //  Coinest
 //
-//  Created by Şevval on 29.09.2022.
+//  Created by Yuşa on 29.09.2022.
 //
 
 import SwiftUI
@@ -12,14 +12,14 @@ final class LocalFileManager {
   static let shared = LocalFileManager()
 
   // MARK: - Initialization
-  private init() {
-
-  }
+  private init() { }
 }
 
 // MARK: - Public Helper Methods
 extension LocalFileManager {
   func saveImage(_ image: UIImage, imageName: String, folderName: String) {
+    createFolderIfNeeded(folderName: folderName)
+
     guard
       let data = image.pngData(),
       let url = getURLForImage(imageName: imageName, folderName: folderName)
