@@ -12,6 +12,7 @@ final class HomeViewModel: ObservableObject {
   // MARK: - Properties
   @Published var coins: [Coin] = []
   @Published var portfolioCoins: [Coin] = []
+  @Published var searchText = String.empty
 
   private let dataService = CoinDataService()
   private var cancellables = Set<AnyCancellable>()

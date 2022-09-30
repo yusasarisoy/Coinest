@@ -12,4 +12,6 @@ struct IconNaming {
   let info = "info"
   let chevronRight = "chevron.right"
   let questionMark = "questionmark"
+  let magnifyingGlass = "magnifyingglass"
+  let xMark = "xmark.circle.fill"
 }

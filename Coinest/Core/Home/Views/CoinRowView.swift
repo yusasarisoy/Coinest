@@ -32,14 +32,14 @@ private extension CoinRowView {
     HStack(spacing: .zero) {
       Text(coin.rank.toString)
         .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
+        .foregroundColor(Color.theme.text)
         .padding(.horizontal)
       CoinImageView(coin: coin)
         .frame(width: 30, height: 30)
       Text(coin.symbol.orEmpty.uppercased())
         .font(.headline)
         .padding(.leading, 6)
-        .foregroundColor(Color.theme.accent)
+        .foregroundColor(Color.theme.text)
     }
   }
 
@@ -47,16 +47,16 @@ private extension CoinRowView {
     VStack(alignment: .trailing) {
       Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
         .bold()
-      Text(coin.currentHoldings.orZero.asNumberString())
+      Text("\(coin.currentHoldings.orZero.asNumberString()) \(coin.symbol.orEmpty.uppercased())")
     }
-    .foregroundColor(Color.theme.accent)
+    .foregroundColor(Color.theme.text)
   }
 
   var rightColumn: some View {
     VStack(alignment: .trailing) {
-      Text((coin.currentPrice?.asCurrencyWith6Decimals()).orEmptyPrice)
+      Text((coin.currentPrice?.asCurrencyWith4Decimals()).orEmptyPrice)
         .bold()
-        .foregroundColor(Color.theme.accent)
+        .foregroundColor(Color.theme.text)
       Text(coin.priceChangePercentage24H.orZero.asPercentString())
         .foregroundColor(coin.priceChangePercentage24H.orZero >= 0 ? Color.theme.green : Color.theme.red)
     }
