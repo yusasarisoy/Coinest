@@ -19,18 +19,38 @@ final class HomeViewModel: ObservableObject {
 
   // MARK: - Initialization
   init() {
-    fetchCoins()
+    fetchCoinsWithFiltering()
   }
 }
 
 // MARK: - Private Helper Methods
 private extension HomeViewModel {
-  func fetchCoins() {
+  func fetchCoinsWithFiltering() {
     dataService.$coins
       .sink { [weak self] coins in
         guard let self = self else { return }
         self.coins = coins
       }
       .store(in: &cancellables)
+
+    $searchText
+      .combineLatest(dataService.$coins)
+      .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+      .map(filterCoins)
+      .sink { [weak self] filteredCoins in
+        guard let self = self else { return }
+        self.coins = filteredCoins
+      }
+      .store(in: &cancellables)
+  }
+
+  func filterCoins(withText text: String, coins: [Coin]) -> [Coin] {
+    guard text.isNotEmpty else { return coins }
+    let coinName = text.lowercased()
+    return coins.filter {
+      $0.name.orEmpty.lowercased().contains(coinName) ||
+      $0.symbol.orEmpty.lowercased().contains(coinName) ||
+      $0.id.orEmpty.lowercased().contains(coinName)
+    }
   }
 }
