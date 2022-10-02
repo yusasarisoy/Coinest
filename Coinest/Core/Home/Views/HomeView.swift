@@ -19,6 +19,7 @@ struct HomeView: View {
         .ignoresSafeArea()
       VStack {
         homeHeader
+        HomeStatisticsView(showPortfolio: $showPortfolio)
         SearchBarView(searchText: $homeViewModel.searchText)
         columnTitles
         if showPortfolio {
@@ -84,6 +85,7 @@ private extension HomeView {
       }
     }
     .listStyle(.plain)
+    .opacity(homeViewModel.portfolioCoins.isEmpty ? 0 : 1)
   }
 
   var cryptocurrenciesListing: some View {

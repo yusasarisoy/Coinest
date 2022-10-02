@@ -10,8 +10,15 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
   // MARK: - Properties
+  @Published var statistics: [Statistic] = [
+    .init(title: "Title", value: "Value", change: 1),
+    .init(title: "Title", value: "Value"),
+    .init(title: "Title", value: "Value", change: -1),
+  ]
+
   @Published var coins: [Coin] = []
   @Published var portfolioCoins: [Coin] = []
+
   @Published var searchText = String.empty
 
   private let dataService = CoinDataService()

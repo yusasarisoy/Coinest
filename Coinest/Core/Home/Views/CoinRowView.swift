@@ -31,15 +31,18 @@ private extension CoinRowView {
   var leftColumn: some View {
     HStack(spacing: .zero) {
       Text(coin.rank.toString)
-        .font(.caption)
+        .frame(width: 35)
+        .scaledToFill()
+        .minimumScaleFactor(0.01)
+        .lineLimit(1)
         .foregroundColor(Color.theme.text)
-        .padding(.horizontal)
-      CoinImageView(coin: coin)
-        .frame(width: 30, height: 30)
-      Text(coin.symbol.orEmpty.uppercased())
-        .font(.headline)
-        .padding(.leading, 6)
-        .foregroundColor(Color.theme.text)
+      HStack {
+        CoinImageView(coin: coin)
+          .frame(width: 30, height: 30)
+        Text(coin.symbol.orEmpty.uppercased())
+          .font(.headline)
+          .foregroundColor(Color.theme.text)
+      }
     }
   }
 
