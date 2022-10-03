@@ -23,7 +23,7 @@ final class CoinDataService {
 // MARK: - Private Helper Methods
 private extension CoinDataService {
   func fetchCoins() {
-    guard let url = URL(string: APIConstants.url) else { return }
+    guard let url = URL(string: APIConstants.top100URL) else { return }
 
     coinSubscription = NetworkManager.download(url: url)
       .decode(type: [Coin].self, decoder: JSONDecoder())

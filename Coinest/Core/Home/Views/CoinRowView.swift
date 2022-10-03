@@ -61,7 +61,7 @@ private extension CoinRowView {
         .bold()
         .foregroundColor(Color.theme.text)
       Text(coin.priceChangePercentage24H.orZero.asPercentString())
-        .foregroundColor(coin.priceChangePercentage24H.orZero >= 0 ? Color.theme.green : Color.theme.red)
+        .foregroundColor(Color.detectColorBasedOnChange(coin.priceChangePercentage24H.orZero))
     }
     .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
   }

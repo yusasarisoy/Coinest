@@ -20,15 +20,16 @@ struct StatisticView: View {
       Text(statistic.value)
         .font(.headline)
         .foregroundColor(Color.theme.text)
-      HStack {
+      HStack(spacing: 2) {
         Image(systemName: IconNaming.shared.triangle)
           .font(.caption2)
           .rotationEffect(.init(degrees: statistic.change.orZero >= 0 ? 0 : 180))
+          .opacity(statistic.change.orZero == 0 ? 0 : 1)
         Text(statistic.change.orZero.asPercentString())
           .font(.caption)
-        .bold()
+          .bold()
       }
-      .foregroundColor(statistic.change.orZero >= 0 ? Color.theme.green : Color.theme.red)
+      .foregroundColor(Color.detectColorBasedOnChange(statistic.change.orZero))
       .opacity(statistic.change.isNil ? 0 : 1)
     }
   }
