@@ -26,7 +26,7 @@ private extension MarketDataService {
     guard let url = URL(string: APIConstants.marketDataURL) else { return }
 
     marketDataSubscription = NetworkManager.download(url: url)
-      .decode(type: GlobalData.self, decoder: JSONDecoder())
+      .decode(type: GlobalData.self, decoder: NetworkManager.jsonDecoder)
       .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] globalData in
         guard let self = self else { return }

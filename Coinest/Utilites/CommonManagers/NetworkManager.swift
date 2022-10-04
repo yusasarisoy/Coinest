@@ -48,5 +48,11 @@ final class NetworkManager {
       print(error.localizedDescription)
     }
   }
-}
 
+  // MARK: - JSONDecoder
+  static var jsnDecoder: JSONDecoder {
+    let jsonDecoder = JSONDecoder()
+    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+    return jsonDecoder
+  }
+}
