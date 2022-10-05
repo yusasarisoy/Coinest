@@ -15,4 +15,5 @@ struct IconNaming {
   let magnifyingGlass = "magnifyingglass"
   let xMark = "xmark.circle.fill"
   let triangle = "triangle.fill"
+  let checkmark = "checkmark"
 }
