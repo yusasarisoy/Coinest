@@ -50,7 +50,7 @@ final class NetworkManager {
   }
 
   // MARK: - JSONDecoder
-  static var jsnDecoder: JSONDecoder {
+  static var jsonDecoder: JSONDecoder {
     let jsonDecoder = JSONDecoder()
     jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     return jsonDecoder
