@@ -18,10 +18,6 @@ struct HomeView: View {
     ZStack {
       Color.theme.background
         .ignoresSafeArea()
-        .sheet(isPresented: $showPortfolioView) {
-          PortfolioView()
-            .environmentObject(homeViewModel)
-        }
       VStack {
         homeHeader
         HomeStatisticsView(showPortfolio: $showPortfolio)
@@ -36,6 +32,10 @@ struct HomeView: View {
         }
         Spacer()
       }
+    }
+    .sheet(isPresented: $showPortfolioView) {
+      PortfolioView()
+        .environmentObject(homeViewModel)
     }
   }
 }
@@ -88,7 +88,7 @@ private extension HomeView {
 
   var portfolioListing: some View {
     List {
-      ForEach(homeViewModel.coins) { coin in
+      ForEach(homeViewModel.portfolioCoins) { coin in
         CoinRowView(coin: coin, showHoldings: true)
           .listRowSeparator(.hidden)
           .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))

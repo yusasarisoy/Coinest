@@ -22,17 +22,22 @@ final class PortfolioDataService {
   // MARK: - Initialization
   init() {
     container = .init(name: Constant.continerName)
-    container.loadPersistentStores { _, error in
+    container.loadPersistentStores { [weak self] _, error in
+      guard let self = self else { return }
+
       if let error = error {
         print("An error occurred while loading the Core Data: \(error.localizedDescription)")
+        return
       }
+
+      self.fetchPortfolio()
     }
   }
 }
 
 // MARK: - Public Helper Methods
 extension PortfolioDataService {
-  func updatePortfolio(coin: Coin, withAmount amount: Double) {
+  func updatePortfolio(withCoin coin: Coin, withAmount amount: Double) {
     guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id.orEmpty })
     else {
       addCoin(coin, withAmount: amount)

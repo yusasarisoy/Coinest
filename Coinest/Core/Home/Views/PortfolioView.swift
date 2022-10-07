@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PortfolioView: View {
   // MARK: - Properties
+  @Environment(\.dismiss) private var dismiss
+
   @EnvironmentObject private var homeViewModel: HomeViewModel
+
   @State private var selectedCoin: Coin?
   @State private var quantityText = String.empty
   @State private var showCheckmark = false
@@ -29,7 +32,7 @@ struct PortfolioView: View {
       .navigationTitle("Edit Portfolio")
       .toolbar(content: {
         ToolbarItem(placement: .navigationBarLeading) {
-          XMarkButton()
+          leadingNavigationBarItems
         }
         ToolbarItem(placement: .navigationBarTrailing) {
           trailingNavigationBarItems
@@ -52,24 +55,29 @@ private extension PortfolioView {
       showsIndicators: false,
       content: {
         LazyHStack(spacing: 10) {
-          ForEach(homeViewModel.coins) { coin in
+          ForEach(homeViewModel.searchText.isEmpty
+                  ? homeViewModel.portfolioCoins
+                  : homeViewModel.coins) { coin in
             CoinLogoView(coin: coin)
               .frame(width: 75)
               .padding(5)
               .onTapGesture {
                 withAnimation(.easeIn) {
-                  selectedCoin = coin
+                  updateSelectedCoin(coin)
                 }
               }
               .background(
                 RoundedRectangle(cornerRadius: 10)
-                  .stroke(selectedCoin?.id == coin.id ? Color.theme.secondaryText : .clear, lineWidth: 2)
+                  .stroke(
+                    selectedCoin?.id == coin.id ? Color.theme.secondaryText : .clear,
+                    lineWidth: 1
+                  )
               )
           }
         }
-        .padding(.vertical, 5)
       }
     )
+    .padding()
   }
 
   var portfolioInputView: some View {
@@ -99,6 +107,15 @@ private extension PortfolioView {
     .font(.headline)
   }
 
+  var leadingNavigationBarItems: some View {
+    Button(action: {
+      dismiss.callAsFunction()
+    }, label: {
+      Image(systemName: IconNaming.shared.xMark)
+        .font(.headline)
+    })
+  }
+
   var trailingNavigationBarItems: some View {
     HStack(spacing: 10) {
       Image(systemName: IconNaming.shared.checkmark)
@@ -122,7 +139,16 @@ private extension PortfolioView {
   }
 
   func didTapSaveButton() {
-    // TODO: - Add to the portfolio.
+    guard
+      let coin = selectedCoin,
+      let amount = Double(quantityText) else {
+      return
+    }
+
+    homeViewModel.updatePortfolio(
+      withCoin: coin,
+      withAmount: amount
+    )
 
     withAnimation(.easeIn) {
       showCheckmark = true
@@ -137,6 +163,18 @@ private extension PortfolioView {
         showCheckmark = false
       }
     }
+  }
+
+  func updateSelectedCoin(_ coin: Coin) {
+    selectedCoin = coin
+    guard let portfolioCoin = homeViewModel.portfolioCoins.first(where: { $0.id == coin.id }),
+          let amount = portfolioCoin.currentHoldings
+    else {
+      quantityText = .empty
+      return
+    }
+
+    quantityText = amount.toString
   }
 
   func removeSelectedCoin() {

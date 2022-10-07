@@ -17,13 +17,23 @@ final class HomeViewModel: ObservableObject {
 
   @Published var searchText = String.empty
 
+  private var cancellables = Set<AnyCancellable>()
+
+  // MARK: - Data Services
   private let coinDataService = CoinDataService()
   private let marketDataService = MarketDataService()
-  private var cancellables = Set<AnyCancellable>()
+  private let portfolioDataService = PortfolioDataService()
 
   // MARK: - Initialization
   init() {
     fetchCoinsWithFiltering()
+  }
+}
+
+// MARK: - Public Helper Methods
+extension HomeViewModel {
+  func updatePortfolio(withCoin coin: Coin, withAmount amount: Double) {
+    portfolioDataService.updatePortfolio(withCoin: coin, withAmount: amount)
   }
 }
 
@@ -46,6 +56,22 @@ private extension HomeViewModel {
         guard let self = self else { return }
 
         self.statistics = statistics
+      }
+      .store(in: &cancellables)
+
+    $coins
+      .combineLatest(portfolioDataService.$portfolioEntities)
+      .map { (coins, portfolioEntities) -> [Coin] in
+        coins.compactMap { coin -> Coin? in
+          guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id.orEmpty }) else {
+            return nil
+          }
+          return coin.updateHoldings(withAmount: entity.amount)
+        }
+      }
+      .sink { [weak self] coins in
+        guard let self = self else { return }
+        self.portfolioCoins = coins
       }
       .store(in: &cancellables)
   }
