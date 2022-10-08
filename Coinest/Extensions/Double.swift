@@ -12,6 +12,10 @@ extension Double {
     "\(self)"
   }
 
+  var toPercentageChange: Double {
+    self * 100
+  }
+
   /// Converts a Double to a 2-digits currency price.
   /// ```
   /// Convert 1234.56 to $1,234.56

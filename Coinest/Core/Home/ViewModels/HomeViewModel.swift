@@ -50,28 +50,22 @@ private extension HomeViewModel {
       }
       .store(in: &cancellables)
 
+    $coins
+      .combineLatest(portfolioDataService.$portfolioEntities)
+      .map(mapAllCoinsToPortfolioCoins)
+      .sink { [weak self] coins in
+        guard let self = self else { return }
+        self.portfolioCoins = coins
+      }
+      .store(in: &cancellables)
+
     marketDataService.$marketData
+      .combineLatest($portfolioCoins)
       .map(mapGlobalData)
       .sink { [weak self] statistics in
         guard let self = self else { return }
 
         self.statistics = statistics
-      }
-      .store(in: &cancellables)
-
-    $coins
-      .combineLatest(portfolioDataService.$portfolioEntities)
-      .map { (coins, portfolioEntities) -> [Coin] in
-        coins.compactMap { coin -> Coin? in
-          guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id.orEmpty }) else {
-            return nil
-          }
-          return coin.updateHoldings(withAmount: entity.amount)
-        }
-      }
-      .sink { [weak self] coins in
-        guard let self = self else { return }
-        self.portfolioCoins = coins
       }
       .store(in: &cancellables)
   }
@@ -86,9 +80,36 @@ private extension HomeViewModel {
     }
   }
 
-  func mapGlobalData(marketData: MarketData?) -> [Statistic] {
+  func mapAllCoinsToPortfolioCoins(
+    coins: [Coin],
+    portfolioEntities: [PortfolioEntity]
+  ) -> [Coin] {
+    coins.compactMap { coin -> Coin? in
+      guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id.orEmpty }) else {
+        return nil
+      }
+      return coin.updateHoldings(withAmount: entity.amount)
+    }
+  }
+
+  func mapGlobalData(
+    marketData: MarketData?,
+    portfolioCoins: [Coin]
+  ) -> [Statistic] {
     guard let marketData = marketData else { return [] }
 
+    let portfolioValue = portfolioCoins
+      .map { $0.currentHoldingsValue }
+      .reduce(0, +)
+    let lastDayPortfolioValue: Double = portfolioCoins
+      .map {
+        let currentValue = $0.currentHoldingsValue
+        let percentChange = $0.marketCapChangePercentage24H.toPercentage
+        return currentValue / (1 + percentChange)
+      }
+      .reduce(0, +)
+    let percentageChange = ((portfolioValue - lastDayPortfolioValue) / lastDayPortfolioValue).toPercentageChange
+    
     let marketCap = Statistic(
       title: "Market Cap",
       value: marketData.marketCap,
@@ -104,8 +125,8 @@ private extension HomeViewModel {
     )
     let portfolio = Statistic(
       title: "Portfolio Value",
-      value: .orEmptyPrice,
-      change: .zero
+      value: portfolioValue.asCurrencyWith2Decimals(),
+      change: percentageChange
     )
 
     return [

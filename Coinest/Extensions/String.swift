@@ -14,7 +14,7 @@ extension String {
     "-"
   }
 
-  static var orEmptyPrice: String {
+  static var emptyPrice: String {
     "$0.00"
   }
 

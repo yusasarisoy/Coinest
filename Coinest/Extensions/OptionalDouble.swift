@@ -21,4 +21,8 @@ extension Optional where Wrapped == Double {
   var toString: String {
     "\(self.orZero)"
   }
+
+  var toPercentage: Double {
+    self.orZero / 100
+  }
 }
