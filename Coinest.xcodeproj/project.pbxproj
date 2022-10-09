@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443DC1D128F2BF30009F091D /* CoinestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DC1D028F2BF30009F091D /* CoinestTests.swift */; };
+		443DC1D828F2BF42009F091D /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */; };
+		443DC1DA28F2BFCE009F091D /* CoreDataConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DC1D928F2BFCE009F091D /* CoreDataConstant.swift */; };
+		443DC1DC28F2C248009F091D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443DC1DB28F2C248009F091D /* CoreDataStack.swift */; };
 		4452925B28EDE54D006DD93C /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452925A28EDE54D006DD93C /* PortfolioView.swift */; };
 		4452926128EDECDD006DD93C /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452926028EDECDD006DD93C /* CoinLogoView.swift */; };
 		4452926328EDFBCD006DD93C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452926228EDFBCC006DD93C /* Task.swift */; };
@@ -15,7 +19,7 @@
 		4464948F28E49D97006919F1 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464948E28E49D97006919F1 /* CoinImageViewModel.swift */; };
 		4466BA9428E308E4007FC650 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4466BA9328E308E4007FC650 /* NetworkManager.swift */; };
 		447BB22028E215130098C711 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BB21F28E215130098C711 /* CoinDataService.swift */; };
-		447BB22328E2210A0098C711 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BB22228E2210A0098C711 /* APIConstants.swift */; };
+		447BB22328E2210A0098C711 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BB22228E2210A0098C711 /* APIConstant.swift */; };
 		44983F7628DECFF900B5D44B /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44983F7528DECFF900B5D44B /* CoinRowView.swift */; };
 		44983F7828DED07D00B5D44B /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44983F7728DED07D00B5D44B /* PreviewProvider.swift */; };
 		44983F7C28DED1E000B5D44B /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44983F7B28DED1E000B5D44B /* DeveloperPreview.swift */; };
@@ -51,7 +55,22 @@
 		44FC9EE928DE0AAB00AAACE0 /* OptionalDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC9EE828DE0AAB00AAACE0 /* OptionalDouble.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		443DC1D228F2BF30009F091D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44E0B35E2879F0A000A991A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44E0B3652879F0A000A991A7;
+			remoteInfo = Coinest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		443DC1CE28F2BF30009F091D /* CoinestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		443DC1D028F2BF30009F091D /* CoinestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinestTests.swift; sourceTree = "<group>"; };
+		443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		443DC1D928F2BFCE009F091D /* CoreDataConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstant.swift; sourceTree = "<group>"; };
+		443DC1DB28F2C248009F091D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		4452925A28EDE54D006DD93C /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		4452926028EDECDD006DD93C /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
 		4452926228EDFBCC006DD93C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -60,7 +79,7 @@
 		4464948E28E49D97006919F1 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		4466BA9328E308E4007FC650 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		447BB21F28E215130098C711 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
-		447BB22228E2210A0098C711 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		447BB22228E2210A0098C711 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		44983F7528DECFF900B5D44B /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		44983F7728DED07D00B5D44B /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		44983F7B28DED1E000B5D44B /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
@@ -98,6 +117,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		443DC1CB28F2BF30009F091D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E0B3632879F0A000A991A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443DC1CF28F2BF30009F091D /* CoinestTests */ = {
+			isa = PBXGroup;
+			children = (
+				443DC1D028F2BF30009F091D /* CoinestTests.swift */,
+				443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */,
+			);
+			path = CoinestTests;
+			sourceTree = "<group>";
+		};
 		4452925F28EDECD3006DD93C /* CoinLogoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +174,7 @@
 			children = (
 				447BB21F28E215130098C711 /* CoinDataService.swift */,
 				4464948C28E49C0C006919F1 /* CoinImageService.swift */,
+				443DC1DB28F2C248009F091D /* CoreDataStack.swift */,
 				449E854728EB233100FCD6D8 /* MarketDataService.swift */,
 				44D151BC28EF1D7500966670 /* PortfolioDataService.swift */,
 			);
@@ -148,7 +184,8 @@
 		447BB22128E220FF0098C711 /* CommonEnums */ = {
 			isa = PBXGroup;
 			children = (
-				447BB22228E2210A0098C711 /* APIConstants.swift */,
+				447BB22228E2210A0098C711 /* APIConstant.swift */,
+				443DC1D928F2BFCE009F091D /* CoreDataConstant.swift */,
 			);
 			path = CommonEnums;
 			sourceTree = "<group>";
@@ -231,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				44E0B3682879F0A000A991A7 /* Coinest */,
+				443DC1CF28F2BF30009F091D /* CoinestTests */,
 				44E0B3672879F0A000A991A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -239,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				44E0B3662879F0A000A991A7 /* Coinest.app */,
+				443DC1CE28F2BF30009F091D /* CoinestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +367,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		443DC1CD28F2BF30009F091D /* CoinestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 443DC1D628F2BF30009F091D /* Build configuration list for PBXNativeTarget "CoinestTests" */;
+			buildPhases = (
+				443DC1CA28F2BF30009F091D /* Sources */,
+				443DC1CB28F2BF30009F091D /* Frameworks */,
+				443DC1CC28F2BF30009F091D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				443DC1D328F2BF30009F091D /* PBXTargetDependency */,
+			);
+			name = CoinestTests;
+			productName = CoinestTests;
+			productReference = 443DC1CE28F2BF30009F091D /* CoinestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		44E0B3652879F0A000A991A7 /* Coinest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44E0B3742879F0A400A991A7 /* Build configuration list for PBXNativeTarget "Coinest" */;
@@ -352,9 +409,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					443DC1CD28F2BF30009F091D = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 44E0B3652879F0A000A991A7;
+					};
 					44E0B3652879F0A000A991A7 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -374,11 +435,19 @@
 			projectRoot = "";
 			targets = (
 				44E0B3652879F0A000A991A7 /* Coinest */,
+				443DC1CD28F2BF30009F091D /* CoinestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		443DC1CC28F2BF30009F091D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E0B3642879F0A000A991A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +460,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		443DC1CA28F2BF30009F091D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				443DC1D128F2BF30009F091D /* CoinestTests.swift in Sources */,
+				443DC1D828F2BF42009F091D /* TestCoreDataStack.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44E0B3622879F0A000A991A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +483,7 @@
 				44983F7628DECFF900B5D44B /* CoinRowView.swift in Sources */,
 				4452925B28EDE54D006DD93C /* PortfolioView.swift in Sources */,
 				449F602828DCEA13007FDEA5 /* TitleNaming.swift in Sources */,
+				443DC1DA28F2BFCE009F091D /* CoreDataConstant.swift in Sources */,
 				44CF1D6D28E03D9300BDB90A /* HomeViewModel.swift in Sources */,
 				4464948B28E4992F006919F1 /* CoinImageView.swift in Sources */,
 				44983F8528DEE67400B5D44B /* CGFloat.swift in Sources */,
@@ -415,10 +494,11 @@
 				44983F7828DED07D00B5D44B /* PreviewProvider.swift in Sources */,
 				447BB22028E215130098C711 /* CoinDataService.swift in Sources */,
 				4464948D28E49C0C006919F1 /* CoinImageService.swift in Sources */,
+				443DC1DC28F2C248009F091D /* CoreDataStack.swift in Sources */,
 				449F602428DCE9D7007FDEA5 /* HomeView.swift in Sources */,
 				449E854428EB1E7A00FCD6D8 /* MarketData.swift in Sources */,
 				44D151C028EF242900966670 /* PortfolioDataModel.xcdatamodeld in Sources */,
-				447BB22328E2210A0098C711 /* APIConstants.swift in Sources */,
+				447BB22328E2210A0098C711 /* APIConstant.swift in Sources */,
 				44E0B37D2879F45600A991A7 /* ColorTheme.swift in Sources */,
 				44D525D128E7593300CF27ED /* UIApplication.swift in Sources */,
 				44E0B36A2879F0A000A991A7 /* CoinestApp.swift in Sources */,
@@ -440,7 +520,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		443DC1D328F2BF30009F091D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44E0B3652879F0A000A991A7 /* Coinest */;
+			targetProxy = 443DC1D228F2BF30009F091D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		443DC1D428F2BF30009F091D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7GW83GWCK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.yusasarisoy.CoinestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coinest";
+			};
+			name = Debug;
+		};
+		443DC1D528F2BF30009F091D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7GW83GWCK8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.yusasarisoy.CoinestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coinest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Coinest";
+			};
+			name = Release;
+		};
 		44E0B3722879F0A400A991A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -614,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		443DC1D628F2BF30009F091D /* Build configuration list for PBXNativeTarget "CoinestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				443DC1D428F2BF30009F091D /* Debug */,
+				443DC1D528F2BF30009F091D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		44E0B3612879F0A000A991A7 /* Build configuration list for PBXProject "Coinest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

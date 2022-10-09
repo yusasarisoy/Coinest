@@ -7,35 +7,23 @@
 
 import CoreData
 
-final class PortfolioDataService {
-  // MARK: - Enums
-  private enum Constant {
-    static let continerName = "PortfolioDataModel"
-    static let entityName = "PortfolioEntity"
-  }
-
+class PortfolioDataService {
   // MARK: - Properties
-  private let container: NSPersistentContainer
-
-  @Published var portfolioEntities: [PortfolioEntity] = []
+  let managedObjectContext: NSManagedObjectContext
+  let coreDataStack: CoreDataStack
 
   // MARK: - Initialization
-  init() {
-    container = .init(name: Constant.continerName)
-    container.loadPersistentStores { [weak self] _, error in
-      guard let self = self else { return }
+  init(managedObjectContext: NSManagedObjectContext, coreDataStack: CoreDataStack) {
+    self.managedObjectContext = managedObjectContext
+    self.coreDataStack = coreDataStack
 
-      if let error = error {
-        print("An error occurred while loading the Core Data: \(error.localizedDescription)")
-        return
-      }
-
-      self.fetchPortfolio()
-    }
+    fetchPortfolio()
   }
+
+  @Published var portfolioEntities: [PortfolioEntity] = []
 }
 
-// MARK: - Public Helper Methods
+// MARK: - Internal Helper Methods
 extension PortfolioDataService {
   func updatePortfolio(withCoin coin: Coin, withAmount amount: Double) {
     guard let entity = portfolioEntities.first(where: { $0.coinID == coin.id.orEmpty })
@@ -50,42 +38,43 @@ extension PortfolioDataService {
       deleteCoin(entity: entity)
     }
   }
-}
 
-// MARK: - Private Helper Methods
-private extension PortfolioDataService {
-  func fetchPortfolio() {
-    let request = NSFetchRequest<PortfolioEntity>(entityName: Constant.entityName)
+  @discardableResult
+  func fetchPortfolio() -> [PortfolioEntity] {
+    let request = NSFetchRequest<PortfolioEntity>(entityName: CoreDataConstant.entityName)
     do {
-      portfolioEntities = try container.viewContext.fetch(request)
+      portfolioEntities = try coreDataStack.storeContainer.viewContext.fetch(request)
     } catch {
       print("An error occurred while fetching the portfolio: \(error.localizedDescription)")
     }
+
+    return portfolioEntities
   }
 
-  func addCoin(_ coin: Coin, withAmount amount: Double) {
-    let entity = PortfolioEntity(context: container.viewContext)
+  @discardableResult
+  func addCoin(_ coin: Coin, withAmount amount: Double) -> PortfolioEntity {
+    let entity = PortfolioEntity(context: coreDataStack.storeContainer.viewContext)
     entity.coinID = coin.id.orEmpty
     entity.amount = amount
     applyCoinChanges()
+    return entity
   }
 
   func updateCoin(entity: PortfolioEntity, withAmount amount: Double) {
     entity.amount = amount
     applyCoinChanges()
   }
+}
 
+// MARK: - Private Helper Methods
+private extension PortfolioDataService {
   func deleteCoin(entity: PortfolioEntity) {
-    container.viewContext.delete(entity)
+    coreDataStack.storeContainer.viewContext.delete(entity)
     applyCoinChanges()
   }
 
   func saveCoin() {
-    do {
-      try container.viewContext.save()
-    } catch {
-      print("An error occurred while saving a coin: \(error.localizedDescription)")
-    }
+    coreDataStack.saveContext(managedObjectContext)
   }
 
   func applyCoinChanges() {

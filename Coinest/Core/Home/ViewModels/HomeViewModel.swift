@@ -18,11 +18,15 @@ final class HomeViewModel: ObservableObject {
   @Published var searchText = String.empty
 
   private var cancellables = Set<AnyCancellable>()
+  private lazy var coreDataStack = CoreDataStack()
 
   // MARK: - Data Services
   private let coinDataService = CoinDataService()
   private let marketDataService = MarketDataService()
-  private let portfolioDataService = PortfolioDataService()
+  private lazy var portfolioDataService = PortfolioDataService(
+    managedObjectContext: coreDataStack.mainContext,
+    coreDataStack: coreDataStack
+  )
 
   // MARK: - Initialization
   init() {

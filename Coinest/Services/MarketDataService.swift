@@ -23,7 +23,7 @@ final class MarketDataService {
 // MARK: - Private Helper Methods
 private extension MarketDataService {
   func fetchMarketData() {
-    guard let url = URL(string: APIConstants.marketDataURL) else { return }
+    guard let url = URL(string: APIConstant.marketDataURL) else { return }
 
     marketDataSubscription = NetworkManager.download(url: url)
       .decode(type: GlobalData.self, decoder: NetworkManager.jsonDecoder)
