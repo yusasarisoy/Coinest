@@ -107,6 +107,9 @@ private extension HomeView {
       }
     }
     .listStyle(.plain)
+    .refreshable {
+      homeViewModel.refreshData()
+    }
   }
 }
 

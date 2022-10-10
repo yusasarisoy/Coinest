@@ -18,11 +18,11 @@ final class HomeViewModel: ObservableObject {
   @Published var searchText = String.empty
 
   private var cancellables = Set<AnyCancellable>()
-  private lazy var coreDataStack = CoreDataStack()
 
   // MARK: - Data Services
   private let coinDataService = CoinDataService()
   private let marketDataService = MarketDataService()
+  private lazy var coreDataStack = CoreDataStack()
   private lazy var portfolioDataService = PortfolioDataService(
     managedObjectContext: coreDataStack.mainContext,
     coreDataStack: coreDataStack
@@ -34,8 +34,13 @@ final class HomeViewModel: ObservableObject {
   }
 }
 
-// MARK: - Public Helper Methods
+// MARK: - Internal Helper Methods
 extension HomeViewModel {
+  func refreshData() {
+    coinDataService.fetchCoins()
+    marketDataService.fetchMarketData()
+  }
+
   func updatePortfolio(withCoin coin: Coin, withAmount amount: Double) {
     portfolioDataService.updatePortfolio(withCoin: coin, withAmount: amount)
   }

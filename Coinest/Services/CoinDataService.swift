@@ -20,8 +20,8 @@ final class CoinDataService {
   }
 }
 
-// MARK: - Private Helper Methods
-private extension CoinDataService {
+// MARK: - Internal Helper Methods
+extension CoinDataService {
   func fetchCoins() {
     guard let url = URL(string: APIConstant.top100URL) else { return }
 

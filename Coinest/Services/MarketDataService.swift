@@ -20,8 +20,8 @@ final class MarketDataService {
   }
 }
 
-// MARK: - Private Helper Methods
-private extension MarketDataService {
+// MARK: - Internal Helper Methods
+extension MarketDataService {
   func fetchMarketData() {
     guard let url = URL(string: APIConstant.marketDataURL) else { return }
 
