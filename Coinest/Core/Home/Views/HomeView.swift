@@ -72,14 +72,50 @@ private extension HomeView {
 
   var columnTitles: some View {
     HStack(spacing: .zero) {
-      Text("Coin")
-        .padding(.leading, 25)
+      HStack {
+        Text("Coin")
+          .padding(.leading, 25)
+        Image(systemName: IconNaming.shared.chevronDown)
+          .opacity([SortOption.rank, SortOption.rankReversed].contains(homeViewModel.sortOption) ? 1 : 0)
+          .rotationEffect(.init(degrees: homeViewModel.sortOption == .rank ? 0 : 180))
+      }
+      .onTapGesture {
+        withAnimation(.default) {
+          homeViewModel.sortOption = homeViewModel.sortOption == .rank
+          ? .rankReversed
+          : .rank
+        }
+      }
       Spacer()
       if showPortfolio {
-        Text("Holdings")
+        HStack {
+          Text("Holdings")
+          Image(systemName: IconNaming.shared.chevronDown)
+            .opacity([SortOption.holdings, SortOption.holdingsReversed].contains(homeViewModel.sortOption) ? 1 : 0)
+            .rotationEffect(.init(degrees: homeViewModel.sortOption == .holdings ? 0 : 180))
+        }
+        .onTapGesture {
+          withAnimation(.default) {
+            homeViewModel.sortOption = homeViewModel.sortOption == .holdings
+            ? .holdingsReversed
+            : .holdings
+          }
+        }
       }
-      Text("Price")
-        .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
+      HStack {
+        Text("Price")
+          .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
+        Image(systemName: IconNaming.shared.chevronDown)
+          .opacity([SortOption.price, SortOption.priceReversed].contains(homeViewModel.sortOption) ? 1 : 0)
+          .rotationEffect(.init(degrees: homeViewModel.sortOption == .price ? 0 : 180))
+      }
+      .onTapGesture {
+        withAnimation(.default) {
+          homeViewModel.sortOption = homeViewModel.sortOption == .price
+          ? .priceReversed
+          : .price
+        }
+      }
     }
     .font(.caption)
     .foregroundColor(Color.theme.secondaryText)

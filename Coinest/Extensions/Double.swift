@@ -38,30 +38,30 @@ extension Double {
     return currencyFormatter2.string(from: number).orEmptyPrice
   }
 
-  /// Converts a Double to a 2 to 4-digits currency price.
+  /// Converts a Double to a 2 to 6-digits currency price.
   /// ```
   /// Convert 1234.56 to $1,234.56
   /// Convert 12.3456 to $12.3456
-  /// Convert 0.123456 to $0.1234
+  /// Convert 0.123456 to $0.123456
   /// ```
-  private var currencyFormatter4: NumberFormatter {
+  private var currencyFormatter6: NumberFormatter {
     let formatter = NumberFormatter()
     formatter.usesGroupingSeparator = true
     formatter.numberStyle = .currency
     formatter.minimumFractionDigits = 2
-    formatter.maximumFractionDigits = 4
+    formatter.maximumFractionDigits = 6
     return formatter
   }
 
-  /// Converts a Double to a 2 to 4-digits currency price as String.
+  /// Converts a Double to a 2 to 6-digits currency price as String.
   /// ```
   /// Convert 1234.56 to "$1,234.56"
   /// Convert 12.3456 to "$12.3456"
-  /// Convert 0.123456 to "$0.1234"
+  /// Convert 0.123456 to "$0.123456"
   /// ```
-  func asCurrencyWith4Decimals() -> String {
+  func asCurrencyWith6Decimals() -> String {
     let number = NSNumber(value: self)
-    return currencyFormatter4.string(from: number).orEmptyPrice
+    return currencyFormatter6.string(from: number).orEmptyPrice
   }
 
   /// Converts a Double to String representation.
