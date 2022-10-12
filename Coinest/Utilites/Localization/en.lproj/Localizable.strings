@@ -15,7 +15,7 @@
 "holdings" = "Holdings";
 "price" = "Price";
 "editPortfolio" = "Edit Portfolio";
-"%@ currentPrice" = "@% Current price: ";
+"%@ currentPrice" = "%@ current price: ";
 "amount" = "Amount:";
 "example" = "Ex: 1.5";
 "currentValue" = "Current value:";
