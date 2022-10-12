@@ -23,7 +23,6 @@ extension Double {
   private var currencyFormatter2: NumberFormatter {
     let formatter = NumberFormatter()
     formatter.usesGroupingSeparator = true
-    formatter.numberStyle = .currency
     formatter.minimumFractionDigits = 2
     formatter.maximumFractionDigits = 2
     return formatter
@@ -35,7 +34,7 @@ extension Double {
   /// ```
   func asCurrencyWith2Decimals() -> String {
     let number = NSNumber(value: self)
-    return currencyFormatter2.string(from: number).orEmptyPrice
+    return currencyFormatter2.string(from: number).orEmptyPrice.prependDollarSign
   }
 
   /// Converts a Double to a 2 to 6-digits currency price.
@@ -47,7 +46,6 @@ extension Double {
   private var currencyFormatter6: NumberFormatter {
     let formatter = NumberFormatter()
     formatter.usesGroupingSeparator = true
-    formatter.numberStyle = .currency
     formatter.minimumFractionDigits = 2
     formatter.maximumFractionDigits = 6
     return formatter
@@ -61,7 +59,7 @@ extension Double {
   /// ```
   func asCurrencyWith6Decimals() -> String {
     let number = NSNumber(value: self)
-    return currencyFormatter6.string(from: number).orEmptyPrice
+    return currencyFormatter6.string(from: number).orEmptyPrice.prependDollarSign
   }
 
   /// Converts a Double to String representation.
