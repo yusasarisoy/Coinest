@@ -54,7 +54,7 @@ private extension HomeView {
           CircleButtonAnimationView(animate: $showPortfolio)
         )
       Spacer()
-      Text(showPortfolio ? TitleNaming.shared.portfolio : TitleNaming.shared.livePrices)
+      Text(showPortfolio ? "portfolio" : "livePrices")
         .font(.headline)
         .fontWeight(.light)
         .foregroundColor(Color.theme.accent)
@@ -73,7 +73,7 @@ private extension HomeView {
   var columnTitles: some View {
     HStack(spacing: .zero) {
       HStack {
-        Text("Coin")
+        Text("coin")
           .padding(.leading, 25)
         Image(systemName: IconNaming.shared.chevronDown)
           .opacity([SortOption.rank, SortOption.rankReversed].contains(homeViewModel.sortOption) ? 1 : 0)
@@ -89,7 +89,7 @@ private extension HomeView {
       Spacer()
       if showPortfolio {
         HStack {
-          Text("Holdings")
+          Text("holdings")
           Image(systemName: IconNaming.shared.chevronDown)
             .opacity([SortOption.holdings, SortOption.holdingsReversed].contains(homeViewModel.sortOption) ? 1 : 0)
             .rotationEffect(.init(degrees: homeViewModel.sortOption == .holdings ? 0 : 180))
@@ -103,7 +103,7 @@ private extension HomeView {
         }
       }
       HStack {
-        Text("Price")
+        Text("price")
           .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
         Image(systemName: IconNaming.shared.chevronDown)
           .opacity([SortOption.price, SortOption.priceReversed].contains(homeViewModel.sortOption) ? 1 : 0)

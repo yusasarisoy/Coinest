@@ -14,7 +14,7 @@ struct StatisticView: View {
   // MARK: - View
   var body: some View {
     VStack(alignment: .center, spacing: 5) {
-      Text(statistic.title)
+      Text(LocalizedStringKey(statistic.title))
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
       Text(statistic.value)

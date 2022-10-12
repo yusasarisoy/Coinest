@@ -29,7 +29,7 @@ struct PortfolioView: View {
           }
         }
       }
-      .navigationTitle("Edit Portfolio")
+      .navigationTitle("editPortfolio")
       .toolbar(content: {
         ToolbarItem(placement: .navigationBarLeading) {
           leadingNavigationBarItems
@@ -83,21 +83,21 @@ private extension PortfolioView {
   var portfolioInputView: some View {
     VStack(spacing: 20) {
       HStack {
-        Text("Current price of \((selectedCoin?.symbol?.uppercased()).orEmpty): ")
+        Text("\((selectedCoin?.symbol?.uppercased()).orEmpty) currentPrice")
         Spacer()
         Text((selectedCoin?.currentPrice?.asCurrencyWith2Decimals()).orEmpty)
       }
       Divider()
       HStack {
-        Text("Amount in your portfolio:")
+        Text("amount")
         Spacer()
-        TextField("Ex: 1.5", text: $quantityText)
+        TextField("example", text: $quantityText)
           .multilineTextAlignment(.trailing)
           .keyboardType(.decimalPad)
       }
       Divider()
       HStack {
-        Text("Current value:")
+        Text("currentValue")
         Spacer()
         Text(currentCoinValue().asCurrencyWith2Decimals())
       }
@@ -123,7 +123,7 @@ private extension PortfolioView {
       Button {
         didTapSaveButton()
       } label: {
-        Text("SAVE")
+        Text("save")
       }
       .opacity(selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText) ? 1 : 0)
     }

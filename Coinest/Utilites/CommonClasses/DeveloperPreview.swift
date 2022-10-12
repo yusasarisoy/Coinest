@@ -13,8 +13,8 @@ final class DeveloperPreview {
   let homeViewModel = HomeViewModel()
 
   // MARK: - Statistic Instances
-  let statisticWithPercentage = Statistic(title: "Market Cap", value: "$934.94B", change: 2.4)
-  let statisticWithoutPercentage = Statistic(title: "Total Volume", value: "$36.27B")
+  let statisticWithPercentage = Statistic(title: "marketCap", value: "$934.94B", change: 2.4)
+  let statisticWithoutPercentage = Statistic(title: "totalVolume", value: "$36.27B")
 
   // MARK: - Coin Instance
   let coin: Coin = .init(

@@ -171,20 +171,20 @@ private extension HomeViewModel {
     let percentageChange = ((portfolioValue - lastDayPortfolioValue) / lastDayPortfolioValue).toPercentageChange
     
     let marketCap = Statistic(
-      title: "Market Cap",
+      title: "marketCap",
       value: marketData.marketCap,
       change: marketData.marketCapChangePercentage24HUsd
     )
     let totalVolume = Statistic(
-      title: "Total Volume",
+      title: "totalVolume",
       value: marketData.volume
     )
     let bitcoinDominance = Statistic(
-      title: "BTC Dominance",
+      title: "btcDominance",
       value: marketData.bitcoinDominance
     )
     let portfolio = Statistic(
-      title: "Portfolio Value",
+      title: "portfolioValue",
       value: portfolioValue.asCurrencyWith2Decimals(),
       change: percentageChange
     )

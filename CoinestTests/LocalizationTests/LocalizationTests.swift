@@ -1,0 +1,26 @@
+//
+//  LocalizationTests.swift
+//  CoinestTests
+//
+//  Created by Yuşa on 12.10.2022.
+//
+
+@testable import Coinest
+import XCTest
+
+final class LocalizationTests: XCTestCase {
+  override func setUp() {
+    super.setUp()
+  }
+
+  override func tearDown() {
+    super.tearDown()
+  }
+
+  func test_btc_dominance_text() {
+    let btcDominanceEnglish = "btcDominance".localized("en")
+    let btcDominanceTurkish = "btcDominance".localized("tr")
+    XCTAssertEqual(btcDominanceEnglish, "BTC Dominance")
+    XCTAssertEqual(btcDominanceTurkish, "BTC Hakimiyeti")
+  }
+}

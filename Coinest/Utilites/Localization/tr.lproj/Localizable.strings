@@ -1,0 +1,24 @@
+/*
+ Localizable.strings
+ Coinest
+
+ Created by Yuşa on 12.10.2022.
+
+ */
+
+"searchText" = "İsme veya sembole göre ara";
+"marketCap" = "Piyasa Değeri";
+"totalVolume" = "Toplam Hacim";
+"btcDominance" = "BTC Hakimiyeti";
+"portfolioValue" = "Portföy Değeri";
+"coin" = "Kripto Para";
+"holdings" = "Varlıklar";
+"price" = "Fiyat";
+"editPortfolio" = "Portföyü Düzenle";
+"%@ currentPrice" = "%@ güncel fiyat: ";
+"amount" = "Miktar:";
+"example" = "Örn: 1.5";
+"currentValue" = "Mevcut değer:";
+"save" = "KAYDET";
+"portfolio" = "Portföy";
+"livePrices" = "Güncel Fiyatlar";

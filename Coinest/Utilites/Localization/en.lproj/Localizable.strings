@@ -1,0 +1,24 @@
+/*
+ Localizable.strings
+ Coinest
+
+ Created by Yuşa on 12.10.2022.
+
+ */
+
+"searchText" = "Search by name or symbol";
+"marketCap" = "Market Cap";
+"totalVolume" = "Total Volume";
+"btcDominance" = "BTC Dominance";
+"portfolioValue" = "Portfolio Value";
+"coin" = "Coin";
+"holdings" = "Holdings";
+"price" = "Price";
+"editPortfolio" = "Edit Portfolio";
+"%@ currentPrice" = "@% Current price: ";
+"amount" = "Amount:";
+"example" = "Ex: 1.5";
+"currentValue" = "Current value:";
+"save" = "SAVE";
+"portfolio" = "Portfolio";
+"livePrices" = "Live Prices";

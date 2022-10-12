@@ -16,19 +16,22 @@ struct SearchBarView: View {
     HStack {
       Image(systemName: IconNaming.shared.magnifyingGlass)
         .foregroundColor(searchText.isEmpty ? Color.theme.secondaryText : Color.theme.accent)
-      TextField("Search by name or symbol", text: $searchText)
-        .autocorrectionDisabled(true)
-        .foregroundColor(Color.theme.accent)
-        .overlay(
-          Image(systemName: IconNaming.shared.xMark)
-            .foregroundColor(Color.theme.accent)
-            .opacity(searchText.isEmpty ? 0 : 1)
-            .onTapGesture {
-              UIApplication.shared.endEditing()
-              searchText = .empty
-            },
-          alignment: .trailing
-        )
+      TextField(
+        "searchText",
+        text: $searchText
+      )
+      .autocorrectionDisabled(true)
+      .foregroundColor(Color.theme.accent)
+      .overlay(
+        Image(systemName: IconNaming.shared.xMark)
+          .foregroundColor(Color.theme.accent)
+          .opacity(searchText.isEmpty ? 0 : 1)
+          .onTapGesture {
+            UIApplication.shared.endEditing()
+            searchText = .empty
+          },
+        alignment: .trailing
+      )
     }
     .font(.headline)
     .padding()
