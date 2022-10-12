@@ -224,6 +224,14 @@
 			path = CommonClasses;
 			sourceTree = "<group>";
 		};
+		449F5EBD28F72296002B0760 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				44E0B36D2879F0A400A991A7 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		449F601928DCE97D007FDEA5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +360,7 @@
 		44E0B37A2879F43F00A991A7 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
-				44E0B36D2879F0A400A991A7 /* Assets.xcassets */,
+				449F5EBD28F72296002B0760 /* Assets */,
 				44983F7D28DED2EC00B5D44B /* CommonClasses */,
 				447BB22128E220FF0098C711 /* CommonEnums */,
 				4466BA9228E308CE007FC650 /* CommonManagers */,
