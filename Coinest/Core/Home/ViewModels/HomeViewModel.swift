@@ -15,6 +15,7 @@ final class HomeViewModel: ObservableObject {
   @Published var portfolioCoins: [Coin] = []
   @Published var searchText = String.empty
   @Published var sortOption: SortOption = .rank
+  @Published var isLoading = true
 
   private var cancellables = Set<AnyCancellable>()
   private let coinDataService = CoinDataService()
@@ -59,6 +60,10 @@ private extension HomeViewModel {
       .sink { [weak self] filteredCoins in
         guard let self = self else { return }
         self.coins = filteredCoins
+        self.isLoading = false
+        Task {
+          await self.stopLoading()
+        }
       }
       .store(in: &cancellables)
 
@@ -195,5 +200,10 @@ private extension HomeViewModel {
       bitcoinDominance,
       portfolio
     ]
+  }
+
+  @MainActor
+  func stopLoading() async {
+    isLoading = false
   }
 }

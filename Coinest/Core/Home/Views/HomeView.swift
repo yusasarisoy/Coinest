@@ -18,19 +18,26 @@ struct HomeView: View {
     ZStack {
       Color.theme.background
         .ignoresSafeArea()
-      VStack {
-        homeHeader
-        HomeStatisticsView(showPortfolio: $showPortfolio)
-        SearchBarView(searchText: $homeViewModel.searchText)
-        columnTitles
-        if showPortfolio {
-          portfolioListing
-            .transition(.move(edge: .trailing))
-        } else {
-          cryptocurrenciesListing
-            .transition(.move(edge: .leading))
+      if homeViewModel.isLoading {
+        Image(IconNaming.shared.astronaut)
+          .resizable()
+          .scaledToFit()
+          .padding(50)
+      } else {
+        VStack {
+          homeHeader
+          HomeStatisticsView(showPortfolio: $showPortfolio)
+          SearchBarView(searchText: $homeViewModel.searchText)
+          columnTitles
+          if showPortfolio {
+            portfolioListing
+              .transition(.move(edge: .trailing))
+          } else {
+            cryptocurrenciesListing
+              .transition(.move(edge: .leading))
+          }
+          Spacer()
         }
-        Spacer()
       }
     }
     .sheet(isPresented: $showPortfolioView) {
