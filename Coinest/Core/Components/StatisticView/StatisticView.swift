@@ -23,13 +23,12 @@ struct StatisticView: View {
       HStack(spacing: 2) {
         Image(systemName: IconNaming.shared.triangle)
           .font(.caption2)
-          .rotationEffect(.init(degrees: statistic.change.orZero >= 0 ? 0 : 180))
-          .opacity(statistic.change.orZero == 0 ? 0 : 1)
+          .rotationEffect(.init(degrees: Double.updateTriangleRotation(statistic.change.orZero)))
         Text(statistic.change.orZero.asPercentString())
           .font(.caption)
           .bold()
       }
-      .foregroundColor(Color.detectColorBasedOnChange(statistic.change.orZero))
+      .foregroundColor(Color.optColorBasedOnChange(statistic.change.orZero))
       .opacity(statistic.change.isNil ? 0 : 1)
     }
   }

@@ -116,4 +116,15 @@ extension Double {
       return "\(sign)\(self)"
     }
   }
+
+  static func updateTriangleRotation(_ change: Double) -> Double {
+    switch change {
+    case let change where change > 0:
+      return 0
+    case let change where change < 0:
+      return 180
+    default:
+      return 90
+    }
+  }
 }

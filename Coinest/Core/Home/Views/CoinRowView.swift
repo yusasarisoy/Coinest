@@ -60,8 +60,13 @@ private extension CoinRowView {
       Text((coin.currentPrice?.asCurrencyWith6Decimals()).orEmptyPrice)
         .bold()
         .foregroundColor(Color.theme.text)
-      Text(coin.priceChangePercentage24H.orZero.asPercentString())
-        .foregroundColor(Color.detectColorBasedOnChange(coin.priceChangePercentage24H.orZero))
+      HStack(spacing: 2) {
+        Image(systemName: IconNaming.shared.triangle)
+          .font(.caption2)
+          .rotationEffect(.init(degrees: Double.updateTriangleRotation(coin.priceChangePercentage24H.orZero)))
+        Text(coin.priceChangePercentage24H.orZero.asPercentString())
+      }
+      .foregroundColor(Color.optColorBasedOnChange(coin.priceChangePercentage24H.orZero))
     }
     .frame(width: CGFloat.oneThirdOfWidth, alignment: .trailing)
   }
