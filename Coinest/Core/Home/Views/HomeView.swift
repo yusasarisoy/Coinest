@@ -27,7 +27,8 @@ struct HomeView: View {
         VStack {
           homeHeader
           HomeStatisticsView(showPortfolio: $showPortfolio)
-          SearchBarView(searchText: $homeViewModel.searchText)
+          Divider()
+            .overlay(Color.theme.background)
           columnTitles
           if showPortfolio {
             portfolioListing
@@ -36,7 +37,7 @@ struct HomeView: View {
             cryptocurrenciesListing
               .transition(.move(edge: .leading))
           }
-          Spacer()
+          SearchBarView(searchText: $homeViewModel.searchText)
         }
       }
     }
