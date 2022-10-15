@@ -30,18 +30,28 @@ struct CoinRowView: View {
 private extension CoinRowView {
   var leftColumn: some View {
     HStack(spacing: .zero) {
-      Text(coin.rank.toString)
-        .frame(width: 35)
-        .scaledToFill()
-        .minimumScaleFactor(0.01)
-        .lineLimit(1)
-        .foregroundColor(Color.theme.text)
+      if !showHoldings {
+        Text(coin.rank.toString)
+          .frame(width: 35)
+          .scaledToFill()
+          .minimumScaleFactor(0.01)
+          .lineLimit(1)
+          .foregroundColor(Color.theme.text)
+      }
       HStack {
         CoinImageView(coin: coin)
           .frame(width: 30, height: 30)
-        Text(coin.symbol.orEmpty.uppercased())
-          .font(.headline)
-          .foregroundColor(Color.theme.text)
+        VStack(alignment: .leading) {
+          Text(coin.name.orEmpty)
+            .font(.body)
+            .bold()
+            .foregroundColor(Color.theme.text)
+          Text(coin.symbol.orEmpty.uppercased())
+            .font(.caption)
+            .bold()
+            .foregroundColor(Color.theme.secondaryText)
+        }
+        .lineLimit(1)
       }
     }
   }
@@ -53,6 +63,7 @@ private extension CoinRowView {
       Text("\(coin.currentHoldings.orZero.asNumberString()) \(coin.symbol.orEmpty.uppercased())")
     }
     .foregroundColor(Color.theme.text)
+    .lineLimit(1)
   }
 
   var rightColumn: some View {

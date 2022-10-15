@@ -67,7 +67,8 @@ extension Double {
   /// Convert 1.2345 to "$1.23"
   /// ```
   func asNumberString() -> String {
-    String(format: "%.2f", self)
+    let isInteger = self == floor(self)
+    return String(format: isInteger ? "%.0f" : "%.2f", self)
   }
 
   /// Converts a Double to String representation with the percent symbol (%).

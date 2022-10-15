@@ -16,18 +16,17 @@ struct CoinLogoView: View {
     VStack {
       CoinImageView(coin: coin)
         .frame(width: 50, height: 50)
-      Text(coin.symbol.orEmpty.uppercased())
-        .font(.headline)
-        .foregroundColor(Color.theme.accent)
-        .lineLimit(1)
-        .minimumScaleFactor(0.5)
       Text(coin.name.orEmpty)
-        .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
-        .lineLimit(2)
-        .minimumScaleFactor(0.5)
+        .foregroundColor(Color.theme.text)
+        .font(.body)
+        .bold()
         .multilineTextAlignment(.center)
+      Text(coin.symbol.orEmpty.uppercased())
+        .bold()
+        .foregroundColor(Color.theme.secondaryText)
+        .font(.caption)
     }
+    .lineLimit(1)
   }
 }
 
