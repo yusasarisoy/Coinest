@@ -10,8 +10,11 @@ import SwiftUI
 struct HomeView: View {
   // MARK: - Properties
   @EnvironmentObject private var homeViewModel: HomeViewModel
+
   @State private var showPortfolio = false
   @State private var showPortfolioView = false
+  @State private var selectedCoin: Coin?
+  @State private var showDetailView = false
 
   // MARK: - View
   var body: some View {
@@ -41,6 +44,13 @@ struct HomeView: View {
         }
       }
     }
+    .background(
+      NavigationLink(
+        destination: DetailLoadingView(coin: $selectedCoin),
+        isActive: $showDetailView,
+        label: { EmptyView() }
+      )
+    )
     .sheet(isPresented: $showPortfolioView) {
       PortfolioView()
         .environmentObject(homeViewModel)
@@ -48,8 +58,9 @@ struct HomeView: View {
   }
 }
 
-// MARK: - Home Views
+// MARK: - Private Helpers
 private extension HomeView {
+  // MARK: - Views
   var homeHeader: some View {
     HStack {
       CircleButtonView(iconName: showPortfolio ? IconNaming.shared.plus : IconNaming.shared.info)
@@ -147,12 +158,21 @@ private extension HomeView {
         CoinRowView(coin: coin, showHoldings: false)
           .listRowSeparator(.hidden)
           .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+          .onTapGesture {
+            navigateToDetail(basedOn: coin)
+          }
       }
     }
     .listStyle(.plain)
     .refreshable {
       homeViewModel.refreshData()
     }
+  }
+
+  // MARK: - Methods
+  func navigateToDetail(basedOn coin: Coin) {
+    selectedCoin = coin
+    showDetailView.toggle()
   }
 }
 
