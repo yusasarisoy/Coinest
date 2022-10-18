@@ -23,17 +23,17 @@ struct DetailLoadingView: View {
 
 struct DetailView: View {
   // MARK: - Properties
-  let coin: Coin
+  @StateObject private var detailViewModel: DetailViewModel
 
   // MARK: - Initialization
   init(coin: Coin) {
-    self.coin = coin
+    _detailViewModel = StateObject(wrappedValue: DetailViewModel(coin: coin))
   }
 
   // MARK: - View
   var body: some View {
     ZStack {
-      Text(coin.name.orEmpty)
+      Text("Hello, World!")
     }
   }
 }
