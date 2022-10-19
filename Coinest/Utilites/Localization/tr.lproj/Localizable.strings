@@ -22,3 +22,12 @@
 "save" = "KAYDET";
 "portfolio" = "Portföy";
 "livePrices" = "Güncel Fiyatlar";
+"overview" = "Genel Bakış";
+"additionalDetails" = "Daha Fazla Bilgi";
+"rank" = "Sıralama";
+"24hHigh" = "Günlük En Yüksek";
+"24hLow" = "Günlük En Düşük";
+"24hPriceChange" = "Günlük Fiyat Değişimi";
+"24hMarketCapChange" = "Günlük Piyasa Değeri Değişimi";
+"blockTime" = "Blok Oluşturulma Süresi";
+"hashingAlgorithm" = "Hashing Algoritması";

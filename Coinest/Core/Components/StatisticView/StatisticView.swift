@@ -13,13 +13,16 @@ struct StatisticView: View {
 
   // MARK: - View
   var body: some View {
-    VStack(alignment: .center, spacing: 5) {
-      Text(LocalizedStringKey(statistic.title))
-        .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
-      Text(statistic.value)
-        .font(.headline)
-        .foregroundColor(Color.theme.text)
+    VStack(alignment: .leading, spacing: 5) {
+      VStack(alignment: .leading, spacing: 5) {
+        Text(LocalizedStringKey(statistic.title))
+          .font(.caption)
+          .foregroundColor(Color.theme.secondaryText)
+        Text(statistic.value)
+          .font(.headline)
+          .foregroundColor(Color.theme.text)
+      }
+      .opacity(!statistic.value.isEmpty ? 1 : 0)
       HStack(spacing: 2) {
         Image(systemName: IconNaming.shared.triangle)
           .font(.caption2)

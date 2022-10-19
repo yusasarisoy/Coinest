@@ -22,3 +22,12 @@
 "save" = "SAVE";
 "portfolio" = "Portfolio";
 "livePrices" = "Live Prices";
+"overview" = "Overview";
+"additionalDetails" = "Additional Details";
+"rank" = "Rank";
+"24hHigh" = "24h High";
+"24hLow" = "24h Low";
+"24hPriceChange" = "24h Price Change";
+"24hMarketCapChange" = "24h Market Cap Change";
+"blockTime" = "Block Time";
+"hashingAlgorithm" = "Hashing Algorithm";
