@@ -22,15 +22,15 @@ final class CoinDataService {
 
 // MARK: - Internal Helper Methods
 extension CoinDataService {
-  func fetchCoins() {
-    guard let url = URL(string: APIConstant.top100URL) else { return }
+  func fetchCoins(withPage page: Int = 1) {
+    guard let url = URL(string: APIConstant.cryptocurrencyListURL(withPage: page)) else { return }
 
     coinSubscription = NetworkManager.download(url: url)
       .decode(type: [Coin].self, decoder: NetworkManager.jsonDecoder)
       .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] coins in
         guard let self = self else { return }
-        self.coins = coins
+        self.coins += coins
         self.coinSubscription?.cancel()
       })
   }

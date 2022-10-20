@@ -31,3 +31,4 @@
 "24hMarketCapChange" = "Günlük Piyasa Değeri Değişimi";
 "blockTime" = "Blok Oluşturulma Süresi";
 "hashingAlgorithm" = "Hashing Algoritması";
+"loading" = "Yükleniyor...";

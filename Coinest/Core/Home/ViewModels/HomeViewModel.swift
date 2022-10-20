@@ -16,6 +16,8 @@ final class HomeViewModel: ObservableObject {
   @Published var searchText = String.empty
   @Published var sortOption: SortOption = .rank
   @Published var isLoading = true
+  @Published var isRefreshingData = false
+  @Published var page = 1
 
   private var cancellables = Set<AnyCancellable>()
   private let coinDataService = CoinDataService()
@@ -34,8 +36,14 @@ final class HomeViewModel: ObservableObject {
 
 // MARK: - Internal Helper Methods
 extension HomeViewModel {
+  func updateList() {
+    isRefreshingData.toggle()
+    page += 1
+    coinDataService.fetchCoins(withPage: page)
+  }
+
   func refreshData() {
-    coinDataService.fetchCoins()
+    coinDataService.fetchCoins(withPage: page)
     marketDataService.fetchMarketData()
   }
 
@@ -43,7 +51,10 @@ extension HomeViewModel {
     withCoin coin: Coin,
     withAmount amount: Double
   ) {
-    portfolioDataService.updatePortfolio(withCoin: coin, withAmount: amount)
+    portfolioDataService.updatePortfolio(
+      withCoin: coin,
+      withAmount: amount
+    )
   }
 }
 
@@ -61,6 +72,7 @@ private extension HomeViewModel {
         guard let self = self else { return }
         self.coins = filteredCoins
         self.isLoading = false
+        self.isRefreshingData = false
         Task {
           await self.stopLoading()
         }

@@ -161,6 +161,14 @@ private extension HomeView {
           .onTapGesture {
             navigateToDetail(basedOn: coin)
           }
+        if coin.id == homeViewModel.coins.last?.id {
+          ProgressView("loading")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .onAppear {
+              homeViewModel.updateList()
+            }
+        }
       }
     }
     .listStyle(.plain)
