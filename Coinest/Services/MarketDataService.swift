@@ -29,7 +29,7 @@ extension MarketDataService {
       .decode(type: GlobalData.self, decoder: NetworkManager.jsonDecoder)
       .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] globalData in
-        guard let self = self else { return }
+        guard let self else { return }
         self.marketData = globalData.data
         self.marketDataSubscription?.cancel()
       })

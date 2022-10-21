@@ -37,8 +37,8 @@ private extension CoinImageService {
       }
       .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] image in
-        guard let self = self,
-              let image = image
+        guard let self,
+              let image
         else {
           return
         }

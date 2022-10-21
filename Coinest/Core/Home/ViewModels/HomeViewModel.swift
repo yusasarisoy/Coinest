@@ -69,7 +69,7 @@ private extension HomeViewModel {
       .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
       .map(filterAndSortCoins)
       .sink { [weak self] filteredCoins in
-        guard let self = self else { return }
+        guard let self else { return }
         self.coins = filteredCoins
         self.isLoading = false
         self.isRefreshingData = false
@@ -83,7 +83,7 @@ private extension HomeViewModel {
       .combineLatest(portfolioDataService.$portfolioEntities)
       .map(mapAllCoinsToPortfolioCoins)
       .sink { [weak self] coins in
-        guard let self = self else { return }
+        guard let self else { return }
         self.portfolioCoins = self.sortPortfolioCoinsBySortOption(coins: coins)
       }
       .store(in: &cancellables)
@@ -92,7 +92,7 @@ private extension HomeViewModel {
       .combineLatest($portfolioCoins)
       .map(mapGlobalData)
       .sink { [weak self] statistics in
-        guard let self = self else { return }
+        guard let self else { return }
 
         self.statistics = statistics
       }
@@ -173,7 +173,7 @@ private extension HomeViewModel {
     marketData: MarketData?,
     portfolioCoins: [Coin]
   ) -> [Statistic] {
-    guard let marketData = marketData else { return [] }
+    guard let marketData else { return [] }
 
     let portfolioValue = portfolioCoins
       .map { $0.currentHoldingsValue }

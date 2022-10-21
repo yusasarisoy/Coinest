@@ -32,7 +32,7 @@ extension CoinDetailDataService {
       .decode(type: CoinDetail.self, decoder: NetworkManager.jsonDecoder)
       .sink(receiveCompletion: NetworkManager.handleCompletion,
             receiveValue: { [weak self] coinDetails in
-        guard let self = self else { return }
+        guard let self else { return }
         self.coinDetails = coinDetails
         self.coinDetailSubscription?.cancel()
       })

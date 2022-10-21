@@ -32,10 +32,10 @@ private extension CoinImageViewModel {
 
     dataService.$image
       .sink { [weak self] _ in
-        guard let self = self else { return }
+        guard let self else { return }
         self.isLoading = false
       } receiveValue: { [weak self] image in
-        guard let self = self else { return }
+        guard let self else { return }
         self.image = image
       }
       .store(in: &cancellables)
