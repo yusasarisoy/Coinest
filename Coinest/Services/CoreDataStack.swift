@@ -8,20 +8,20 @@
 import CoreData
 
 class CoreDataStack {
-  public static let model: NSManagedObjectModel = {
-    // swiftlint:disable force_unwrapping
-    let modelURL = Bundle.main.url(forResource: CoreDataConstant.continerName, withExtension: "momd")!
+  // MARK: - Properties
+  private static let model: NSManagedObjectModel = {
+    let modelURL = Bundle.main.url(
+      forResource: CoreDataConstant.continerName,
+      withExtension: "momd"
+    )!
     return NSManagedObjectModel(contentsOf: modelURL)!
   }()
 
-  public init() {
-  }
-
-  public lazy var mainContext: NSManagedObjectContext = {
-    return storeContainer.viewContext
+  lazy var mainContext: NSManagedObjectContext = {
+    storeContainer.viewContext
   }()
 
-  public lazy var storeContainer: NSPersistentContainer = {
+  lazy var storeContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: CoreDataConstant.continerName)
     container.loadPersistentStores { _, error in
       if let error = error as NSError? {
@@ -31,17 +31,14 @@ class CoreDataStack {
     return container
   }()
 
-  public func newDerivedContext() -> NSManagedObjectContext {
-    let context = storeContainer.newBackgroundContext()
-    return context
-  }
+  // MARK: - Initialization
+  init() { }
+}
 
-  public func saveContext() {
-    saveContext(mainContext)
-  }
-
-  public func saveContext(_ context: NSManagedObjectContext) {
-    if context != mainContext {
+// MARK: - Internal Helper Methods
+extension CoreDataStack {
+  func saveContext(_ context: NSManagedObjectContext) {
+    guard context == mainContext else {
       saveDerivedContext(context)
       return
     }
@@ -54,9 +51,17 @@ class CoreDataStack {
       }
     }
   }
+}
 
-  public func saveDerivedContext(_ context: NSManagedObjectContext) {
-    context.perform {
+// MARK: - Private Helper Methods
+private extension CoreDataStack {
+  func newDerivedContext() -> NSManagedObjectContext {
+    storeContainer.newBackgroundContext()
+  }
+
+  func saveDerivedContext(_ context: NSManagedObjectContext) {
+    context.perform { [weak self] in
+      guard let self else { return }
       do {
         try context.save()
       } catch let error as NSError {
