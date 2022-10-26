@@ -23,6 +23,7 @@ struct CoinRowView: View {
       rightColumn
     }
     .font(.subheadline)
+    .padding(.horizontal)
   }
 }
 
@@ -32,7 +33,7 @@ private extension CoinRowView {
     HStack(spacing: .zero) {
       if !showHoldings {
         Text(coin.rank.toString)
-          .frame(width: 35)
+          .frame(width: 25)
           .scaledToFill()
           .minimumScaleFactor(0.01)
           .lineLimit(1)
