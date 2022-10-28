@@ -7,7 +7,7 @@
 
 import CoreData
 
-class PortfolioDataService {
+final class PortfolioDataService {
   // MARK: - Properties
   let managedObjectContext: NSManagedObjectContext
   let coreDataStack: CoreDataStack
