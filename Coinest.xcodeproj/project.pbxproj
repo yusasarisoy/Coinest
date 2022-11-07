@@ -54,6 +54,7 @@
 		44E0B3712879F0A400A991A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */; };
 		44E0B37D2879F45600A991A7 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B37C2879F45600A991A7 /* ColorTheme.swift */; };
 		44E10A0D28E82C1800B8B2BC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E10A0C28E82C1800B8B2BC /* Collection.swift */; };
+		44F7180829192439009A6C88 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 44F7180729192439009A6C88 /* SnapshotTesting */; };
 		44FA236628E98EE3003D3ACE /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236528E98EE3003D3ACE /* Statistic.swift */; };
 		44FA236828E99014003D3ACE /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236728E99014003D3ACE /* StatisticView.swift */; };
 		44FA236B28E9981E003D3ACE /* HomeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236A28E9981E003D3ACE /* HomeStatisticsView.swift */; };
@@ -143,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F7180829192439009A6C88 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +341,7 @@
 				44E0B3682879F0A000A991A7 /* Coinest */,
 				443DC1CF28F2BF30009F091D /* CoinestTests */,
 				44E0B3672879F0A000A991A7 /* Products */,
+				44F71809291925B7009A6C88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -414,6 +417,13 @@
 			path = CommonStructs;
 			sourceTree = "<group>";
 		};
+		44F71809291925B7009A6C88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		44FA236928E9901F003D3ACE /* StatisticView */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +478,9 @@
 			dependencies = (
 			);
 			name = Coinest;
+			packageProductDependencies = (
+				44F7180729192439009A6C88 /* SnapshotTesting */,
+			);
 			productName = Coinest;
 			productReference = 44E0B3662879F0A000A991A7 /* Coinest.app */;
 			productType = "com.apple.product-type.application";
@@ -501,6 +514,9 @@
 				tr,
 			);
 			mainGroup = 44E0B35D2879F0A000A991A7;
+			packageReferences = (
+				44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 44E0B3672879F0A000A991A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -696,6 +712,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -758,6 +775,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -864,6 +882,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44F7180729192439009A6C88 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		44D151BE28EF242900966670 /* PortfolioDataModel.xcdatamodeld */ = {
