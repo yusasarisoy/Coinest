@@ -33,4 +33,18 @@ final class HomeViewTests: XCTestCase {
       as: .image(on: .iPhone13Mini)
     )
   }
+
+  func testHomeViewOniPhonePortrait() throws {
+    assertSnapshot(
+      matching: viewController,
+      as: .image(on: .iPhone13Mini(.portrait))
+    )
+  }
+
+  func testHomeViewOniPhoneLandscape() throws {
+    assertSnapshot(
+      matching: viewController,
+      as: .image(on: .iPhone13Mini(.landscape))
+    )
+  }
 }
