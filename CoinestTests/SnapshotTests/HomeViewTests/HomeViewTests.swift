@@ -47,4 +47,15 @@ final class HomeViewTests: XCTestCase {
       as: .image(on: .iPhone13Mini(.landscape))
     )
   }
+
+  func testHomeViewOniPhoneDarkMode() throws {
+    let traitDarkMode = UITraitCollection(userInterfaceStyle: .dark)
+    assertSnapshot(
+      matching: viewController,
+      as: .image(
+        on: .iPhone13Mini,
+        traits: traitDarkMode
+      )
+    )
+  }
 }
