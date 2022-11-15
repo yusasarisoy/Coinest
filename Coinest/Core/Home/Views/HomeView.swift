@@ -141,34 +141,30 @@ private extension HomeView {
   }
 
   var portfolioListing: some View {
-    List {
-      ForEach(homeViewModel.portfolioCoins) { coin in
-        CoinRowView(coin: coin, showHoldings: true)
-          .listRowSeparator(.hidden)
-          .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-      }
+    List(homeViewModel.portfolioCoins) { coin in
+      CoinRowView(coin: coin, showHoldings: true)
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
     }
     .listStyle(.plain)
     .opacity(homeViewModel.portfolioCoins.isEmpty ? 0 : 1)
   }
 
   var cryptocurrenciesListing: some View {
-    List {
-      ForEach(homeViewModel.coins) { coin in
-        CoinRowView(coin: coin, showHoldings: false)
-          .listRowSeparator(.hidden)
-          .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-          .onTapGesture {
-            navigateToDetail(basedOn: coin)
-          }
-        if coin.id == homeViewModel.coins.last?.id {
-          ProgressView("loading")
-            .padding()
-            .frame(maxWidth: .infinity)
-            .onAppear {
-              homeViewModel.updateList()
-            }
+    List(homeViewModel.coins) { coin in
+      CoinRowView(coin: coin, showHoldings: false)
+        .listRowSeparator(.hidden)
+        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+        .onTapGesture {
+          navigateToDetail(basedOn: coin)
         }
+      if coin.id == homeViewModel.coins.last?.id {
+        ProgressView("loading")
+          .padding()
+          .frame(maxWidth: .infinity)
+          .onAppear {
+            homeViewModel.updateList()
+          }
       }
     }
     .listStyle(.plain)
