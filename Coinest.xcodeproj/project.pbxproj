@@ -42,6 +42,7 @@
 		449F602028DCE9C0007FDEA5 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F601F28DCE9C0007FDEA5 /* CircleButtonAnimationView.swift */; };
 		449F602428DCE9D7007FDEA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602328DCE9D7007FDEA5 /* HomeView.swift */; };
 		449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602528DCEA06007FDEA5 /* IconNaming.swift */; };
+		44A72E84292557E6004639AA /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 44A72E83292557E6004639AA /* SnapshotTesting */; };
 		44BFA753291AAAFD00B3693E /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFA752291AAAFD00B3693E /* HomeViewTests.swift */; };
 		44C37EF228E638B200049E15 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C37EF128E638B200049E15 /* LocalFileManager.swift */; };
 		44CF1D6D28E03D9300BDB90A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF1D6C28E03D9300BDB90A /* HomeViewModel.swift */; };
@@ -56,7 +57,6 @@
 		44E0B3712879F0A400A991A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */; };
 		44E0B37D2879F45600A991A7 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B37C2879F45600A991A7 /* ColorTheme.swift */; };
 		44E10A0D28E82C1800B8B2BC /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E10A0C28E82C1800B8B2BC /* Collection.swift */; };
-		44F7180829192439009A6C88 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 44F7180729192439009A6C88 /* SnapshotTesting */; };
 		44FA236628E98EE3003D3ACE /* Statistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236528E98EE3003D3ACE /* Statistic.swift */; };
 		44FA236828E99014003D3ACE /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236728E99014003D3ACE /* StatisticView.swift */; };
 		44FA236B28E9981E003D3ACE /* HomeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FA236A28E9981E003D3ACE /* HomeStatisticsView.swift */; };
@@ -141,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A72E84292557E6004639AA /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44F7180829192439009A6C88 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +491,9 @@
 				443DC1D328F2BF30009F091D /* PBXTargetDependency */,
 			);
 			name = CoinestTests;
+			packageProductDependencies = (
+				44A72E83292557E6004639AA /* SnapshotTesting */,
+			);
 			productName = CoinestTests;
 			productReference = 443DC1CE28F2BF30009F091D /* CoinestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -509,7 +512,6 @@
 			);
 			name = Coinest;
 			packageProductDependencies = (
-				44F7180729192439009A6C88 /* SnapshotTesting */,
 			);
 			productName = Coinest;
 			productReference = 44E0B3662879F0A000A991A7 /* Coinest.app */;
@@ -545,7 +547,7 @@
 			);
 			mainGroup = 44E0B35D2879F0A000A991A7;
 			packageReferences = (
-				44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 44E0B3672879F0A000A991A7 /* Products */;
 			projectDirPath = "";
@@ -916,7 +918,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+		44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
@@ -927,9 +929,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		44F7180729192439009A6C88 /* SnapshotTesting */ = {
+		44A72E83292557E6004639AA /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44F7180629192439009A6C88 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = 44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
