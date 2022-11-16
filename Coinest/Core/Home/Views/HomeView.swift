@@ -141,35 +141,43 @@ private extension HomeView {
   }
 
   var portfolioListing: some View {
-    List(homeViewModel.portfolioCoins) { coin in
-      CoinRowView(coin: coin, showHoldings: true)
-        .listRowSeparator(.hidden)
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+    ScrollView {
+      LazyVStack {
+        ForEach(homeViewModel.portfolioCoins) { coin in
+          CoinRowView(coin: coin, showHoldings: true)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+        }
+      }
+      .listStyle(.plain)
+      .opacity(homeViewModel.portfolioCoins.isEmpty ? 0 : 1)
     }
-    .listStyle(.plain)
-    .opacity(homeViewModel.portfolioCoins.isEmpty ? 0 : 1)
   }
 
   var cryptocurrenciesListing: some View {
-    List(homeViewModel.coins) { coin in
-      CoinRowView(coin: coin, showHoldings: false)
-        .listRowSeparator(.hidden)
-        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-        .onTapGesture {
-          navigateToDetail(basedOn: coin)
-        }
-      if coin.id == homeViewModel.coins.last?.id {
-        ProgressView("loading")
-          .padding()
-          .frame(maxWidth: .infinity)
-          .onAppear {
-            homeViewModel.updateList()
+    ScrollView {
+      LazyVStack {
+        ForEach(homeViewModel.coins) { coin in
+          CoinRowView(coin: coin, showHoldings: false)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+            .onTapGesture {
+              navigateToDetail(basedOn: coin)
+            }
+          if coin.id == homeViewModel.coins.last?.id {
+            ProgressView("loading")
+              .padding()
+              .frame(maxWidth: .infinity)
+              .onAppear {
+                homeViewModel.updateList()
+              }
           }
+        }
       }
-    }
-    .listStyle(.plain)
-    .refreshable {
-      homeViewModel.refreshData()
+      .listStyle(.plain)
+      .refreshable {
+        homeViewModel.refreshData()
+      }
     }
   }
 
