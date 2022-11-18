@@ -1,10 +1,3 @@
-//
-//  Preview Documentation.swift
-//  Coinest
-//
-//  Created by Yuşa on 23.09.2022.
-//
-
 // MARK: - CoinGecko API Top 100
 
 /*

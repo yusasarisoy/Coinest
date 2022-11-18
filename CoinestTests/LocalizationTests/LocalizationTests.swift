@@ -1,10 +1,3 @@
-//
-//  LocalizationTests.swift
-//  CoinestTests
-//
-//  Created by Yuşa on 12.10.2022.
-//
-
 @testable import Coinest
 import XCTest
 

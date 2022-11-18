@@ -1,10 +1,3 @@
-//
-//  SearchBarView.swift
-//  Coinest
-//
-//  Created by Yuşa on 30.09.2022.
-//
-
 import SwiftUI
 
 struct SearchBarView: View {

@@ -1,10 +1,3 @@
-//
-//  PortfolioDataService.swift
-//  Coinest
-//
-//  Created by Yuşa on 6.10.2022.
-//
-
 import CoreData
 
 final class PortfolioDataService {

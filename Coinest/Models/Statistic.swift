@@ -1,10 +1,3 @@
-//
-//  Statistic.swift
-//  Coinest
-//
-//  Created by Yuşa on 2.10.2022.
-//
-
 import Foundation
 
 struct Statistic: Identifiable {

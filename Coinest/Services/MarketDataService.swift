@@ -1,10 +1,3 @@
-//
-//  MarketDataService.swift
-//  Coinest
-//
-//  Created by Yuşa on 3.10.2022.
-//
-
 import Combine
 import Foundation
 

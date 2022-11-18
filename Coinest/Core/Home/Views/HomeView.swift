@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  Coinest
-//
-//  Created by Yuşa on 22.09.2022.
-//
-
 import SwiftUI
 
 struct HomeView: View {

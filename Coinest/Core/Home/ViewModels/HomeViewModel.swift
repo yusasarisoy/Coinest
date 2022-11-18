@@ -1,10 +1,3 @@
-//
-//  HomeViewModel.swift
-//  Coinest
-//
-//  Created by Yuşa on 25.09.2022.
-//
-
 import Combine
 import SwiftUI
 

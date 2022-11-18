@@ -1,10 +1,3 @@
-//
-//  Double.swift
-//  Coinest
-//
-//  Created by Yuşa on 24.09.2022.
-//
-
 import Foundation
 
 extension Double {

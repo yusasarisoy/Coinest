@@ -1,10 +1,3 @@
-//
-//  HomeViewTests.swift
-//  CoinestTests
-//
-//  Created by Yuşa on 8.11.2022.
-//
-
 @testable import Coinest
 import SnapshotTesting
 import SwiftUI

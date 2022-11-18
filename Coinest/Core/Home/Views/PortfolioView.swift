@@ -1,10 +1,3 @@
-//
-//  PortfolioView.swift
-//  Coinest
-//
-//  Created by Yuşa on 5.10.2022.
-//
-
 import SwiftUI
 
 struct PortfolioView: View {

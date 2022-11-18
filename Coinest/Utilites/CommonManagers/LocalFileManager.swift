@@ -1,10 +1,3 @@
-//
-//  LocalFileManager.swift
-//  Coinest
-//
-//  Created by Yuşa on 29.09.2022.
-//
-
 import SwiftUI
 
 final class LocalFileManager {

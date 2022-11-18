@@ -1,10 +1,3 @@
-//
-//  CoinRowViewTests.swift
-//  CoinestTests
-//
-//  Created by Yuşa on 7.11.2022.
-//
-
 @testable import Coinest
 import SnapshotTesting
 import SwiftUI

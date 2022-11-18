@@ -1,10 +1,3 @@
-//
-//  DeveloperPreview.swift
-//  Coinest
-//
-//  Created by Yuşa on 24.09.2022.
-//
-
 final class DeveloperPreview {
   // MARK: - Singleton Instance
   static let instance = DeveloperPreview()

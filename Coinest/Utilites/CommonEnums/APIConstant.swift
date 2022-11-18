@@ -1,10 +1,3 @@
-//
-//  APIConstant.swift
-//  Coinest
-//
-//  Created by Yuşa on 26.09.2022.
-//
-
 enum APIConstant {
   static func cryptocurrencyListURL(withPage page: Int) -> String { "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=\(page)&sparkline=true&price_change_percentage=24h"
   }

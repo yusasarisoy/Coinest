@@ -1,10 +1,3 @@
-//
-//  Coin.swift
-//  Coinest
-//
-//  Created by Yuşa on 23.09.2022.
-//
-
 struct Coin: Identifiable, Decodable {
   let id: String?
   let symbol: String?

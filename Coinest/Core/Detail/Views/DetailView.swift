@@ -1,10 +1,3 @@
-//
-//  DetailView.swift
-//  Coinest
-//
-//  Created by Yuşa on 17.10.2022.
-//
-
 import SwiftUI
 
 struct DetailLoadingView: View {

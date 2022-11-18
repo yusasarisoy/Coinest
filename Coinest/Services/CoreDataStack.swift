@@ -1,10 +1,3 @@
-//
-//  CoreDataStack.swift
-//  Coinest
-//
-//  Created by Yuşa on 9.10.2022.
-//
-
 import CoreData
 
 class CoreDataStack {

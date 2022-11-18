@@ -1,10 +1,3 @@
-//
-//  NetworkManager.swift
-//  Coinest
-//
-//  Created by Yuşa on 27.09.2022.
-//
-
 import Combine
 import Foundation
 

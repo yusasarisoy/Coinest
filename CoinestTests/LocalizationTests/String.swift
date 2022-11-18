@@ -1,10 +1,3 @@
-//
-//  String.swift
-//  CoinestTests
-//
-//  Created by Yuşa on 12.10.2022.
-//
-
 import Foundation
 
 extension String {

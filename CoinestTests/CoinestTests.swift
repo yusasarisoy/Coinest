@@ -1,10 +1,3 @@
-//
-//  CoinestTests.swift
-//  CoinestTests
-//
-//  Created by Yuşa on 9.10.2022.
-//
-
 @testable import Coinest
 import CoreData
 import XCTest

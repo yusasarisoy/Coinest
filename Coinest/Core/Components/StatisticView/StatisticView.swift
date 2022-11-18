@@ -1,10 +1,3 @@
-//
-//  StatisticView.swift
-//  Coinest
-//
-//  Created by Yuşa on 2.10.2022.
-//
-
 import SwiftUI
 
 struct StatisticView: View {

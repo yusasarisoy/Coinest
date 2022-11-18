@@ -1,10 +1,3 @@
-//
-//  ColorTheme.swift
-//  Coinest
-//
-//  Created by Yuşa on 9.07.2022.
-//
-
 import SwiftUI
 
 struct ColorTheme {

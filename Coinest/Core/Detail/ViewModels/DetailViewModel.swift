@@ -1,10 +1,3 @@
-//
-//  DetailViewModel.swift
-//  Coinest
-//
-//  Created by Yuşa on 18.10.2022.
-//
-
 import Combine
 
 final class DetailViewModel: ObservableObject {

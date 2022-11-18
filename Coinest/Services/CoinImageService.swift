@@ -1,10 +1,3 @@
-//
-//  CoinImageService.swift
-//  Coinest
-//
-//  Created by Yuşa on 28.09.2022.
-//
-
 import Combine
 import SwiftUI
 

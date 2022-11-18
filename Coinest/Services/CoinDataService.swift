@@ -1,10 +1,3 @@
-//
-//  CoinDataService.swift
-//  Coinest
-//
-//  Created by Yuşa on 26.09.2022.
-//
-
 import Combine
 import Foundation
 
