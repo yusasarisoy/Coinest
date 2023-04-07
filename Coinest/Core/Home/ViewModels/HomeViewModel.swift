@@ -177,7 +177,9 @@ private extension HomeViewModel {
         return currentValue / (1 + percentChange)
       }
       .reduce(0, +)
-    let percentageChange = ((portfolioValue - lastDayPortfolioValue) / lastDayPortfolioValue).toPercentageChange
+    let percentageChange = portfolioValue == 0
+    ? 0
+    : ((portfolioValue - lastDayPortfolioValue) / lastDayPortfolioValue).toPercentageChange
     
     let marketCap = Statistic(
       title: "marketCap",
