@@ -61,7 +61,7 @@ private extension CoreDataStack {
         fatalError("Unresolved error \(error), \(error.userInfo)")
       }
 
-      self.saveContext(self.mainContext)
+      saveContext(mainContext)
     }
   }
 }

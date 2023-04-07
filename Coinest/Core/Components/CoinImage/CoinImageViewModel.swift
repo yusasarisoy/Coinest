@@ -26,7 +26,7 @@ private extension CoinImageViewModel {
     dataService.$image
       .sink { [weak self] _ in
         guard let self else { return }
-        self.isLoading = false
+        isLoading = false
       } receiveValue: { [weak self] image in
         guard let self else { return }
         self.image = image

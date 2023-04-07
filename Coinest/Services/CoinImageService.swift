@@ -36,8 +36,8 @@ private extension CoinImageService {
           return
         }
         self.image = image
-        self.imageSubscription?.cancel()
-        self.fileManager.saveImage(image, imageName: self.imageName, folderName: self.folderName)
+        imageSubscription?.cancel()
+        fileManager.saveImage(image, imageName: imageName, folderName: folderName)
       })
   }
 

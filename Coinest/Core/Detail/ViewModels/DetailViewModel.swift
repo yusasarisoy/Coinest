@@ -25,8 +25,8 @@ private extension DetailViewModel {
       .map(mapCoinDetails)
       .sink { [weak self] statistics in
         guard let self else { return }
-        self.overviewStatistics = statistics.overview
-        self.additionalDetailsStatistics = statistics.additionalDetails
+        overviewStatistics = statistics.overview
+        additionalDetailsStatistics = statistics.additionalDetails
       }
       .store(in: &cancellables)
   }

@@ -27,7 +27,7 @@ extension CoinDetailDataService {
             receiveValue: { [weak self] coinDetails in
         guard let self else { return }
         self.coinDetails = coinDetails
-        self.coinDetailSubscription?.cancel()
+        coinDetailSubscription?.cancel()
       })
   }
 }

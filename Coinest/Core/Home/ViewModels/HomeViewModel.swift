@@ -63,9 +63,9 @@ private extension HomeViewModel {
       .map(filterAndSortCoins)
       .sink { [weak self] filteredCoins in
         guard let self else { return }
-        self.coins = filteredCoins
-        self.isLoading = false
-        self.isRefreshingData = false
+        coins = filteredCoins
+        isLoading = false
+        isRefreshingData = false
         Task {
           await self.stopLoading()
         }
@@ -77,7 +77,7 @@ private extension HomeViewModel {
       .map(mapAllCoinsToPortfolioCoins)
       .sink { [weak self] coins in
         guard let self else { return }
-        self.portfolioCoins = self.sortPortfolioCoinsBySortOption(coins: coins)
+        portfolioCoins = sortPortfolioCoinsBySortOption(coins: coins)
       }
       .store(in: &cancellables)
 
@@ -86,7 +86,6 @@ private extension HomeViewModel {
       .map(mapGlobalData)
       .sink { [weak self] statistics in
         guard let self else { return }
-
         self.statistics = statistics
       }
       .store(in: &cancellables)
