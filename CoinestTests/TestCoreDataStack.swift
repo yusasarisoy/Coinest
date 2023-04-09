@@ -12,7 +12,7 @@ final class TestCoreDataStack: CoreDataStack {
     container.persistentStoreDescriptions = [persistentStoreDescription]
 
     container.loadPersistentStores { _, error in
-      if let error = error {
+      if let error {
         fatalError("An error occurred while loading the Core Data in test: \(error.localizedDescription)")
       }
     }

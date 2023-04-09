@@ -17,7 +17,7 @@ class CoreDataStack {
   lazy var storeContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: CoreDataConstant.continerName)
     container.loadPersistentStores { _, error in
-      if let error = error as NSError? {
+      if let error {
         fatalError("An error occurred while loading the Core Data: \(error.localizedDescription)")
       }
     }

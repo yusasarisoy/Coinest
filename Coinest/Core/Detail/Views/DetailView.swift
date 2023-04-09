@@ -7,7 +7,7 @@ struct DetailLoadingView: View {
   // MARK: - View
   var body: some View {
     ZStack {
-      if let coin = coin {
+      if let coin {
         DetailView(coin: coin)
       }
     }
