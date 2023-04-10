@@ -148,7 +148,7 @@ private extension HomeView {
   var cryptocurrenciesListing: some View {
     ScrollView {
       LazyVStack {
-        ForEach(homeViewModel.coins) { coin in
+        ForEach(homeViewModel.coins, id: \.id) { coin in
           CoinRowView(coin: coin, showHoldings: false)
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
@@ -166,9 +166,6 @@ private extension HomeView {
         }
       }
       .listStyle(.plain)
-      .refreshable {
-        homeViewModel.refreshData()
-      }
     }
   }
 
