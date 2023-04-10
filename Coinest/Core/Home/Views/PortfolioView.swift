@@ -151,7 +151,7 @@ private extension PortfolioView {
     UIApplication.shared.endEditing()
     
     Task {
-      try await Task.sleep(withSeconds: 2)
+      try await Task.sleep(for: .seconds(2))
       withAnimation(.easeOut) {
         showCheckmark = false
       }
