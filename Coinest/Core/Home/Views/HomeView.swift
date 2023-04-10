@@ -11,39 +11,37 @@ struct HomeView: View {
 
   // MARK: - View
   var body: some View {
-    ZStack {
-      Color.theme.background
-        .ignoresSafeArea()
-      if homeViewModel.isLoading {
-        Image(IconNaming.shared.astronaut)
-          .resizable()
-          .scaledToFit()
-          .padding(50)
-      } else {
-        VStack {
-          homeHeader
-          HomeStatisticsView(showPortfolio: $showPortfolio)
-          Divider()
-            .overlay(Color.theme.background)
-          columnTitles
-          if showPortfolio {
-            portfolioListing
-              .transition(.move(edge: .trailing))
-          } else {
-            cryptocurrenciesListing
-              .transition(.move(edge: .leading))
+    NavigationStack {
+      ZStack {
+        Color.theme.background
+          .ignoresSafeArea()
+        if homeViewModel.isLoading {
+          Image(IconNaming.shared.astronaut)
+            .resizable()
+            .scaledToFit()
+            .padding(50)
+        } else {
+          VStack {
+            homeHeader
+            HomeStatisticsView(showPortfolio: $showPortfolio)
+            Divider()
+              .overlay(Color.theme.background)
+            columnTitles
+            if showPortfolio {
+              portfolioListing
+                .transition(.move(edge: .trailing))
+            } else {
+              cryptocurrenciesListing
+                .transition(.move(edge: .leading))
+            }
+            SearchBarView(searchText: $homeViewModel.searchText)
           }
-          SearchBarView(searchText: $homeViewModel.searchText)
         }
       }
+      .navigationDestination(isPresented: $showDetailView) {
+        DetailLoadingView(coin: $selectedCoin)
+      }
     }
-    .background(
-      NavigationLink(
-        destination: DetailLoadingView(coin: $selectedCoin),
-        isActive: $showDetailView,
-        label: { EmptyView() }
-      )
-    )
     .sheet(isPresented: $showPortfolioView) {
       PortfolioView()
         .environmentObject(homeViewModel)
