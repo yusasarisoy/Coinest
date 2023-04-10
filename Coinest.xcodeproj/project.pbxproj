@@ -15,7 +15,6 @@
 		444FCC8D28F964360066864E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444FCC8C28F964350066864E /* Color.swift */; };
 		4452925B28EDE54D006DD93C /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452925A28EDE54D006DD93C /* PortfolioView.swift */; };
 		4452926128EDECDD006DD93C /* CoinLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452926028EDECDD006DD93C /* CoinLogoView.swift */; };
-		4452926328EDFBCD006DD93C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452926228EDFBCC006DD93C /* Task.swift */; };
 		4464948B28E4992F006919F1 /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464948A28E4992F006919F1 /* CoinImageView.swift */; };
 		4464948D28E49C0C006919F1 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464948C28E49C0C006919F1 /* CoinImageService.swift */; };
 		4464948F28E49D97006919F1 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4464948E28E49D97006919F1 /* CoinImageViewModel.swift */; };
@@ -85,7 +84,6 @@
 		444FCC8C28F964350066864E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4452925A28EDE54D006DD93C /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		4452926028EDECDD006DD93C /* CoinLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogoView.swift; sourceTree = "<group>"; };
-		4452926228EDFBCC006DD93C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		4464948A28E4992F006919F1 /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		4464948C28E49C0C006919F1 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		4464948E28E49D97006919F1 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
@@ -419,7 +417,6 @@
 				44983F8028DEDA4E00B5D44B /* OptionalString.swift */,
 				44983F7728DED07D00B5D44B /* PreviewProvider.swift */,
 				44D525CE28E7558A00CF27ED /* String.swift */,
-				4452926228EDFBCC006DD93C /* Task.swift */,
 				44D525D028E7593300CF27ED /* UIApplication.swift */,
 			);
 			path = Extensions;
@@ -633,7 +630,6 @@
 				44FC9EE728DE026300AAACE0 /* Preview Documentation.swift in Sources */,
 				44C37EF228E638B200049E15 /* LocalFileManager.swift in Sources */,
 				449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */,
-				4452926328EDFBCD006DD93C /* Task.swift in Sources */,
 				449E854828EB233100FCD6D8 /* MarketDataService.swift in Sources */,
 				449F602028DCE9C0007FDEA5 /* CircleButtonAnimationView.swift in Sources */,
 				44D525CD28E73D2B00CF27ED /* SearchBarView.swift in Sources */,
@@ -840,10 +836,12 @@
 				DEVELOPMENT_TEAM = 7GW83GWCK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,9 +849,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.yusasarisoy.Coinest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -868,10 +869,12 @@
 				DEVELOPMENT_TEAM = 7GW83GWCK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,9 +882,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icloud.yusasarisoy.Coinest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
