@@ -64,7 +64,6 @@ private extension HomeViewModel {
       .sink { [weak self] filteredCoins in
         guard let self else { return }
         coins = filteredCoins
-        isLoading = false
         isRefreshingData = false
         Task {
           await self.stopLoading()

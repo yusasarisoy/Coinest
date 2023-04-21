@@ -16,10 +16,7 @@ struct HomeView: View {
         Color.theme.background
           .ignoresSafeArea()
         if homeViewModel.isLoading {
-          Image(IconNaming.shared.astronaut)
-            .resizable()
-            .scaledToFit()
-            .padding(50)
+          ProgressView()
         } else {
           VStack {
             homeHeader

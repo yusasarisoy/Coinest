@@ -12,8 +12,4 @@ struct IconNaming {
   let xMark = "xmark.circle.fill"
   let triangle = "triangle.fill"
   let checkmark = "checkmark"
-
-  // MARK: - Asset
-
-  let astronaut = "astronaut"
 }
