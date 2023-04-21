@@ -41,8 +41,6 @@
 		449F602028DCE9C0007FDEA5 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F601F28DCE9C0007FDEA5 /* CircleButtonAnimationView.swift */; };
 		449F602428DCE9D7007FDEA5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602328DCE9D7007FDEA5 /* HomeView.swift */; };
 		449F602628DCEA06007FDEA5 /* IconNaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449F602528DCEA06007FDEA5 /* IconNaming.swift */; };
-		44A72E84292557E6004639AA /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 44A72E83292557E6004639AA /* SnapshotTesting */; };
-		44BFA753291AAAFD00B3693E /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFA752291AAAFD00B3693E /* HomeViewTests.swift */; };
 		44C37EF228E638B200049E15 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C37EF128E638B200049E15 /* LocalFileManager.swift */; };
 		44CF1D6D28E03D9300BDB90A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF1D6C28E03D9300BDB90A /* HomeViewModel.swift */; };
 		44D151BD28EF1D7500966670 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D151BC28EF1D7500966670 /* PortfolioDataService.swift */; };
@@ -50,7 +48,6 @@
 		44D525CD28E73D2B00CF27ED /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D525CC28E73D2B00CF27ED /* SearchBarView.swift */; };
 		44D525CF28E7558A00CF27ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D525CE28E7558A00CF27ED /* String.swift */; };
 		44D525D128E7593300CF27ED /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D525D028E7593300CF27ED /* UIApplication.swift */; };
-		44D8077E291961FC00F55318 /* CoinRowViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8077D291961FC00F55318 /* CoinRowViewTests.swift */; };
 		44E0B36A2879F0A000A991A7 /* CoinestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0B3692879F0A000A991A7 /* CoinestApp.swift */; };
 		44E0B36E2879F0A400A991A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E0B36D2879F0A400A991A7 /* Assets.xcassets */; };
 		44E0B3712879F0A400A991A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */; };
@@ -76,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		442F1FFE28FD338D00BEB614 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		443DC1CE28F2BF30009F091D /* CoinestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		443DC1CE28F2BF30009F091D /* CoinestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CoinestTests.xctest; path = "/Users/yusasarisoy/XcodeProjects/Open-Source Projects/Coinest/build/Debug-iphoneos/CoinestTests.xctest"; sourceTree = "<absolute>"; };
 		443DC1D028F2BF30009F091D /* CoinestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinestTests.swift; sourceTree = "<group>"; };
 		443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		443DC1D928F2BFCE009F091D /* CoreDataConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstant.swift; sourceTree = "<group>"; };
@@ -111,7 +108,6 @@
 		449F601F28DCE9C0007FDEA5 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 		449F602328DCE9D7007FDEA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		449F602528DCEA06007FDEA5 /* IconNaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNaming.swift; sourceTree = "<group>"; };
-		44BFA752291AAAFD00B3693E /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		44C37EF128E638B200049E15 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		44CF1D6C28E03D9300BDB90A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		44D151BC28EF1D7500966670 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
@@ -119,8 +115,7 @@
 		44D525CC28E73D2B00CF27ED /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		44D525CE28E7558A00CF27ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		44D525D028E7593300CF27ED /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		44D8077D291961FC00F55318 /* CoinRowViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowViewTests.swift; sourceTree = "<group>"; };
-		44E0B3662879F0A000A991A7 /* Coinest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E0B3662879F0A000A991A7 /* Coinest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinest.app; path = "/Users/yusasarisoy/XcodeProjects/Open-Source Projects/Coinest/build/Debug-iphoneos/Coinest.app"; sourceTree = "<absolute>"; };
 		44E0B3692879F0A000A991A7 /* CoinestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinestApp.swift; sourceTree = "<group>"; };
 		44E0B36D2879F0A400A991A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44E0B3702879F0A400A991A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -139,7 +134,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44A72E84292557E6004639AA /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +183,6 @@
 		443DC1CF28F2BF30009F091D /* CoinestTests */ = {
 			isa = PBXGroup;
 			children = (
-				44D8077929195DAD00F55318 /* SnapshotTests */,
 				443DC1D028F2BF30009F091D /* CoinestTests.swift */,
 				443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */,
 				4492679E28F6F903004C58A9 /* LocalizationTests */,
@@ -330,14 +323,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		44BFA751291AAAE300B3693E /* HomeViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				44BFA752291AAAFD00B3693E /* HomeViewTests.swift */,
-			);
-			path = HomeViewTests;
-			sourceTree = "<group>";
-		};
 		44D525CB28E73D1600CF27ED /* SearchBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,40 +331,12 @@
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
-		44D8077929195DAD00F55318 /* SnapshotTests */ = {
-			isa = PBXGroup;
-			children = (
-				44BFA751291AAAE300B3693E /* HomeViewTests */,
-				44D8077A29195DCB00F55318 /* CoinRowViewTests */,
-			);
-			path = SnapshotTests;
-			sourceTree = "<group>";
-		};
-		44D8077A29195DCB00F55318 /* CoinRowViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				44D8077D291961FC00F55318 /* CoinRowViewTests.swift */,
-			);
-			path = CoinRowViewTests;
-			sourceTree = "<group>";
-		};
 		44E0B35D2879F0A000A991A7 = {
 			isa = PBXGroup;
 			children = (
 				44E0B3682879F0A000A991A7 /* Coinest */,
 				443DC1CF28F2BF30009F091D /* CoinestTests */,
-				44E0B3672879F0A000A991A7 /* Products */,
-				44F71809291925B7009A6C88 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		44E0B3672879F0A000A991A7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				44E0B3662879F0A000A991A7 /* Coinest.app */,
-				443DC1CE28F2BF30009F091D /* CoinestTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		44E0B3682879F0A000A991A7 /* Coinest */ = {
@@ -444,13 +401,6 @@
 			path = CommonStructs;
 			sourceTree = "<group>";
 		};
-		44F71809291925B7009A6C88 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		44FA236928E9901F003D3ACE /* StatisticView */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,7 +439,6 @@
 			);
 			name = CoinestTests;
 			packageProductDependencies = (
-				44A72E83292557E6004639AA /* SnapshotTesting */,
 			);
 			productName = CoinestTests;
 			productReference = 443DC1CE28F2BF30009F091D /* CoinestTests.xctest */;
@@ -544,9 +493,8 @@
 			);
 			mainGroup = 44E0B35D2879F0A000A991A7;
 			packageReferences = (
-				44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
-			productRefGroup = 44E0B3672879F0A000A991A7 /* Products */;
+			productRefGroup = 44E0B35D2879F0A000A991A7;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -584,8 +532,6 @@
 				443DC1D128F2BF30009F091D /* CoinestTests.swift in Sources */,
 				443DC1D828F2BF42009F091D /* TestCoreDataStack.swift in Sources */,
 				449F5EBF28F72829002B0760 /* String.swift in Sources */,
-				44BFA753291AAAFD00B3693E /* HomeViewTests.swift in Sources */,
-				44D8077E291961FC00F55318 /* CoinRowViewTests.swift in Sources */,
 				4492679B28F6F5E5004C58A9 /* LocalizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -922,25 +868,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		44A72E83292557E6004639AA /* SnapshotTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 44A72E82292557E5004639AA /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
-			productName = SnapshotTesting;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		44D151BE28EF242900966670 /* PortfolioDataModel.xcdatamodeld */ = {
