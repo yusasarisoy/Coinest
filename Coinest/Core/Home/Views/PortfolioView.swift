@@ -180,6 +180,6 @@ private extension PortfolioView {
 struct PortfolioView_Previews: PreviewProvider {
   static var previews: some View {
     PortfolioView()
-      .environmentObject(developer.homeViewModel)
+      .environmentObject(HomeViewModel())
   }
 }

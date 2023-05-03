@@ -1,6 +1,7 @@
 import Combine
 import SwiftUI
 
+@MainActor
 final class HomeViewModel: ObservableObject {
   // MARK: - Properties
   @Published var statistics: [Statistic] = []
@@ -9,9 +10,9 @@ final class HomeViewModel: ObservableObject {
   @Published var searchText = String.empty
   @Published var sortOption: SortOption = .rank
   @Published var isLoading = true
-  @Published var isRefreshingData = false
-  @Published var page = 1
+  @Published var hasMoreCoins = true
 
+  private(set) var page = 0
   private var cancellables = Set<AnyCancellable>()
   private let coinDataService = CoinDataService()
   private let marketDataService = MarketDataService()
@@ -30,14 +31,8 @@ final class HomeViewModel: ObservableObject {
 // MARK: - Internal Helper Methods
 extension HomeViewModel {
   func updateList() {
-    isRefreshingData.toggle()
     page += 1
     coinDataService.fetchCoins(withPage: page)
-  }
-
-  func refreshData() {
-    coinDataService.fetchCoins(withPage: page)
-    marketDataService.fetchMarketData()
   }
 
   func updatePortfolio(
@@ -64,10 +59,8 @@ private extension HomeViewModel {
       .sink { [weak self] filteredCoins in
         guard let self else { return }
         coins = filteredCoins
-        isRefreshingData = false
-        Task {
-          await self.stopLoading()
-        }
+        self.isLoading = false
+        self.hasMoreCoins = !filteredCoins.isEmpty
       }
       .store(in: &cancellables)
 
@@ -205,10 +198,5 @@ private extension HomeViewModel {
       bitcoinDominance,
       portfolio
     ]
-  }
-
-  @MainActor
-  func stopLoading() async {
-    isLoading = false
   }
 }

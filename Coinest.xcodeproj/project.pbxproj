@@ -72,8 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4405E6F92A00526C0016ED04 /* Coinest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Coinest.app; path = "/Users/yusasarisoy/Xcode Projects/Open Source Projects/Coinest/build/Debug-iphoneos/Coinest.app"; sourceTree = "<absolute>"; };
-		4405E6FA2A00526C0016ED04 /* CoinestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CoinestTests.xctest; path = "/Users/yusasarisoy/Xcode Projects/Open Source Projects/Coinest/build/Debug-iphoneos/CoinestTests.xctest"; sourceTree = "<absolute>"; };
+		440024542A02422D00B291D9 /* Coinest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coinest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		440024552A02422D00B291D9 /* CoinestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		442F1FFE28FD338D00BEB614 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		443DC1D028F2BF30009F091D /* CoinestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinestTests.swift; sourceTree = "<group>"; };
 		443DC1D728F2BF42009F091D /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
@@ -336,6 +336,8 @@
 			children = (
 				44E0B3682879F0A000A991A7 /* Coinest */,
 				443DC1CF28F2BF30009F091D /* CoinestTests */,
+				440024542A02422D00B291D9 /* Coinest.app */,
+				440024552A02422D00B291D9 /* CoinestTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -441,7 +443,7 @@
 			packageProductDependencies = (
 			);
 			productName = CoinestTests;
-			productReference = 4405E6FA2A00526C0016ED04 /* CoinestTests.xctest */;
+			productReference = 440024552A02422D00B291D9 /* CoinestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		44E0B3652879F0A000A991A7 /* Coinest */ = {
@@ -460,7 +462,7 @@
 			packageProductDependencies = (
 			);
 			productName = Coinest;
-			productReference = 4405E6F92A00526C0016ED04 /* Coinest.app */;
+			productReference = 440024542A02422D00B291D9 /* Coinest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

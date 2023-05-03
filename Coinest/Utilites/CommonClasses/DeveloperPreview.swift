@@ -2,9 +2,6 @@ final class DeveloperPreview {
   // MARK: - Singleton Instance
   static let instance = DeveloperPreview()
 
-  // MARK: - Properties
-  let homeViewModel = HomeViewModel()
-
   // MARK: - Statistic Instances
   let statisticWithPercentage = Statistic(title: "marketCap", value: "$934.94B", change: 2.4)
   let statisticWithoutPercentage = Statistic(title: "totalVolume", value: "$36.27B")

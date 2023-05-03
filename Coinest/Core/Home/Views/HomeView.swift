@@ -3,41 +3,40 @@ import SwiftUI
 struct HomeView: View {
   // MARK: - Properties
   @EnvironmentObject private var homeViewModel: HomeViewModel
-
+  
   @State private var showPortfolio = false
   @State private var showPortfolioView = false
   @State private var selectedCoin: Coin?
   @State private var showDetailView = false
-
+  
   // MARK: - View
   var body: some View {
     NavigationStack {
       ZStack {
         Color.theme.background
           .ignoresSafeArea()
-        if homeViewModel.isLoading {
-          ProgressView()
-        } else {
-          VStack {
-            homeHeader
-            HomeStatisticsView(showPortfolio: $showPortfolio)
-            Divider()
-              .overlay(Color.theme.background)
-            columnTitles
-            if showPortfolio {
-              portfolioListing
-                .transition(.move(edge: .trailing))
-            } else {
-              cryptocurrenciesListing
-                .transition(.move(edge: .leading))
-            }
-            SearchBarView(searchText: $homeViewModel.searchText)
+        VStack {
+          homeHeader
+          HomeStatisticsView(showPortfolio: $showPortfolio)
+          Divider()
+            .overlay(Color.theme.background)
+          columnTitles
+          if showPortfolio {
+            portfolioListing
+              .transition(.move(edge: .trailing))
+          } else {
+            cryptocurrenciesListing
+              .transition(.move(edge: .leading))
           }
+          SearchBarView(searchText: $homeViewModel.searchText)
         }
       }
       .navigationDestination(isPresented: $showDetailView) {
         DetailLoadingView(coin: $selectedCoin)
       }
+    }
+    .onAppear {
+      homeViewModel.updateList()
     }
     .sheet(isPresented: $showPortfolioView) {
       PortfolioView()
@@ -75,7 +74,7 @@ private extension HomeView {
     }
     .padding(.horizontal)
   }
-
+  
   var columnTitles: some View {
     HStack(spacing: .zero) {
       HStack {
@@ -127,7 +126,7 @@ private extension HomeView {
     .foregroundColor(Color.theme.secondaryText)
     .padding(.horizontal)
   }
-
+  
   var portfolioListing: some View {
     ScrollView {
       LazyVStack {
@@ -141,10 +140,10 @@ private extension HomeView {
       .opacity(homeViewModel.portfolioCoins.isEmpty ? 0 : 1)
     }
   }
-
+  
   var cryptocurrenciesListing: some View {
-    ScrollView {
-      LazyVStack {
+    NavigationView {
+      List {
         ForEach(homeViewModel.coins, id: \.id) { coin in
           CoinRowView(coin: coin, showHoldings: false)
             .listRowSeparator(.hidden)
@@ -152,20 +151,22 @@ private extension HomeView {
             .onTapGesture {
               navigateToDetail(basedOn: coin)
             }
-          if coin.id == homeViewModel.coins.last?.id {
-            ProgressView("loading")
-              .padding()
-              .frame(maxWidth: .infinity)
-              .onAppear {
-                homeViewModel.updateList()
-              }
-          }
+        }
+        if !homeViewModel.coins.isEmpty,
+           homeViewModel.hasMoreCoins {
+          ProgressView("loading")
+            .padding()
+            .frame(maxWidth: .infinity)
+            .onAppear {
+              homeViewModel.updateList()
+            }
         }
       }
       .listStyle(.plain)
     }
+    .navigationViewStyle(.stack)
   }
-
+  
   // MARK: - Methods
   func navigateToDetail(basedOn coin: Coin) {
     selectedCoin = coin
@@ -181,6 +182,6 @@ struct HomeView_Previews: PreviewProvider {
         .navigationBarHidden(true)
         .preferredColorScheme(.dark)
     }
-    .environmentObject(developer.homeViewModel)
+    .environmentObject(HomeViewModel())
   }
 }
